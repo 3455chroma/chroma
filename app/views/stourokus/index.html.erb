@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Stourokus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Genre id;integer</th>
+      <th>Name</th>
+      <th>Hito</th>
+      <th>Hatsubaiday</th>
+      <th>Tenpo</th>
+      <th>Money</th>
+      <th>Tokuten</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stourokus.each do |stouroku| %>
+      <tr>
+        <td><%= stouroku.genre_id;integer %></td>
+        <td><%= stouroku.name %></td>
+        <td><%= stouroku.hito %></td>
+        <td><%= stouroku.hatsubaiday %></td>
+        <td><%= stouroku.tenpo %></td>
+        <td><%= stouroku.money %></td>
+        <td><%= stouroku.tokuten %></td>
+        <td><%= stouroku.user_id %></td>
+        <td><%= link_to 'Show', stouroku %></td>
+        <td><%= link_to 'Edit', edit_stouroku_path(stouroku) %></td>
+        <td><%= link_to 'Destroy', stouroku, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stouroku', new_stouroku_path %>

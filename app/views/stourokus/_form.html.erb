@@ -1,0 +1,57 @@
+<%= form_with(model: stouroku, local: true) do |form| %>
+  <% if stouroku.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stouroku.errors.count, "error") %> prohibited this stouroku from being saved:</h2>
+
+      <ul>
+      <% stouroku.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :genre_id;integer %>
+    <%= form.text_field :genre_id;integer, id: :stouroku_genre_id;integer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name, id: :stouroku_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hito %>
+    <%= form.text_area :hito, id: :stouroku_hito %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hatsubaiday %>
+    <%= form.date_select :hatsubaiday, id: :stouroku_hatsubaiday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tenpo %>
+    <%= form.text_field :tenpo, id: :stouroku_tenpo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :money %>
+    <%= form.number_field :money, id: :stouroku_money %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tokuten %>
+    <%= form.text_area :tokuten, id: :stouroku_tokuten %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :stouroku_user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

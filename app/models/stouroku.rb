@@ -1,0 +1,2 @@
+class Stouroku < ApplicationRecord
+end

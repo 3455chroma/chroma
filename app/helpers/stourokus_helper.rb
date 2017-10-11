@@ -1,0 +1,2 @@
+module StourokusHelper
+end
