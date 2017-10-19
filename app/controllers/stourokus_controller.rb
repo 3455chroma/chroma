@@ -4,7 +4,9 @@ class StourokusController < ApplicationController
   # GET /stourokus
   # GET /stourokus.json
   def index
-    @stourokus = Stouroku.all
+    @stourokus1 = Stouroku.where(cd:false)
+    @stourokus2 = Stouroku.where(cd:true)
+    
   end
 
   # GET /stourokus/1
@@ -24,32 +26,66 @@ class StourokusController < ApplicationController
   # POST /stourokus
   # POST /stourokus.json
   def create
-    @stouroku = Stouroku.new(stouroku_params)
+#    @stouroku = Stouroku.new(stouroku_params)
 
-    respond_to do |format|
-      if @stouroku.save
-        format.html { redirect_to @stouroku, notice: 'Stouroku was successfully created.' }
-        format.json { render :show, status: :created, location: @stouroku }
-      else
-        format.html { render :new }
-        format.json { render json: @stouroku.errors, status: :unprocessable_entity }
-      end
+#    respond_to do |format|
+#      if @stouroku.save
+#        format.html { redirect_to @stouroku, notice: 'Stouroku was successfully created.' }
+#        format.json { render :show, status: :created, location: @stouroku }
+#      else
+#        format.html { render :new }
+#        format.json { render json: @stouroku.errors, status: :unprocessable_entity }
+#      end
+#    end
+#  end
+
+    @stouroku = Stouroku.new
+    @stouroku.name          = params[:stouroku][:name]
+    @stouroku.hito          = params[:stouroku][:hito]
+    @stouroku.hatsubaiday   = params[:stouroku][:hatsubaiday]
+    @stouroku.tenpo         = params[:stouroku][:tenpo]
+    @stouroku.money         = params[:stouroku][:money]
+    @stouroku.tokuten       = params[:stouroku][:tokuten]
+    @stouroku.cd       = params[:stouroku][:cd]
+    
+
+    if @stouroku.save
+      redirect_to stourokus_path
+    else
+      render :new
     end
   end
+ 
 
   # PATCH/PUT /stourokus/1
   # PATCH/PUT /stourokus/1.json
   def update
-    respond_to do |format|
-      if @stouroku.update(stouroku_params)
-        format.html { redirect_to @stouroku, notice: 'Stouroku was successfully updated.' }
-        format.json { render :show, status: :ok, location: @stouroku }
-      else
-        format.html { render :edit }
-        format.json { render json: @stouroku.errors, status: :unprocessable_entity }
-      end
-    end
+#    respond_to do |format|
+#      if @stouroku.update(stouroku_params)
+#        format.html { redirect_to @stouroku, notice: 'Stouroku was successfully updated.' }
+#        format.json { render :show, status: :ok, location: @stouroku }
+#      else
+#        format.html { render :edit }
+#        format.json { render json: @stouroku.errors, status: :unprocessable_entity }
+#      end
+#    end
+#  end
+
+  @stouroku.name          = params[:stouroku][:name]
+  @stouroku.hito          = params[:stouroku][:hito]
+  @stouroku.hatsubaiday   = params[:stouroku][:hatsubaiday]
+  @stouroku.tenpo         = params[:stouroku][:tenpo]
+  @stouroku.money         = params[:stouroku][:money]
+  @stouroku.tokuten       = params[:stouroku][:tokuten] 
+  @stouroku.cd       = params[:stouroku][:cd]
+  
+
+  if @stouroku.save
+    redirect_to stourokus_path
+  else
+    render :edit
   end
+end
 
   # DELETE /stourokus/1
   # DELETE /stourokus/1.json
@@ -69,6 +105,6 @@ class StourokusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stouroku_params
-      params.require(:stouroku).permit(:genre_id, :name, :hito, :hatsubaiday, :tenpo, :money, :tokuten, :user_id)
+      params.require(:stouroku).permit(:genre_id, :name, :hito, :hatsubaiday, :tenpo, :money, :tokuten, :user_id, :cd)
     end
 end

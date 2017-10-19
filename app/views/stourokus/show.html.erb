@@ -1,44 +1,46 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Genre id;integer:</strong>
-  <%= @stouroku.genre_id;integer %>
+  <strong>ジャンル</strong>
+  <%= @stouroku.genre_id %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>商品名</strong>
   <%= @stouroku.name %>
 </p>
 
 <p>
-  <strong>Hito:</strong>
+  <strong>人名</strong>
   <%= @stouroku.hito %>
 </p>
 
 <p>
-  <strong>Hatsubaiday:</strong>
+  <strong>発売日</strong>
   <%= @stouroku.hatsubaiday %>
 </p>
 
 <p>
-  <strong>Tenpo:</strong>
+  <strong>予約店舗</strong>
   <%= @stouroku.tenpo %>
 </p>
 
 <p>
-  <strong>Money:</strong>
+  <strong>金額</strong>
   <%= @stouroku.money %>
 </p>
 
 <p>
-  <strong>Tokuten:</strong>
+  <strong>特典</strong>
   <%= @stouroku.tokuten %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>ユーザー</strong>
   <%= @stouroku.user_id %>
 </p>
 
-<%= link_to 'Edit', edit_stouroku_path(@stouroku) %> |
-<%= link_to 'Back', stourokus_path %>
+
+<%= link_to '戻る', edit_stouroku_path(@stouroku) %> |
+<%= link_to 'TOP', 'http://localhost:3000/stourokus' %>
+
