@@ -1,32 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<h1>ユーザー</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Password</th>
-      <th>Imagename</th>
-      <th>Imagetype</th>
-      <th>Imagedate</th>
-      <th>Account</th>
+      <th>プロフィール画像</th>   
+      <th>名前</th>
+      <th>アカウント名</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.name %></td>
-        <td><%= user.password %></td>
-        <td><%= user.imagename %></td>
-        <td><%= user.imagetype %></td>
-        <td><%= user.imagedate %></td>
+        <td><%= image_tag show_image_user_path(user), :width => 100 %></td>
+        <td><%= user.name %></td>        
         <td><%= user.account %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', user %></td>
+        <td><%= link_to '変更', edit_user_path(user) %></td>
+        <td><%= link_to '削除', user, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to '新規登録', new_user_path %>

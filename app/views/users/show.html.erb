@@ -1,34 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <%= image_tag show_image_user_path(@user), :width => 100 %>
+</p>
+
+<p>
+  <strong>名前:</strong>
   <%= @user.name %>
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
-  <strong>Imagename:</strong>
-  <%= @user.imagename %>
-</p>
-
-<p>
-  <strong>Imagetype:</strong>
-  <%= @user.imagetype %>
-</p>
-
-<p>
-  <strong>Imagedate:</strong>
-  <%= @user.imagedate %>
-</p>
-
-<p>
-  <strong>Account:</strong>
+  <strong>アカウント名:</strong>
   <%= @user.account %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to '変更', edit_user_path(@user) %> |
+<%= link_to '戻る', users_path %>
