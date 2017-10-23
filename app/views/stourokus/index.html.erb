@@ -1,26 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Stourokus</h1>
+<h1>商品一覧</h1>
+
+<br>
+
+<h1>未完了</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Genre id;integer</th>
-      <th>Name</th>
-      <th>Hito</th>
-      <th>Hatsubaiday</th>
-      <th>Tenpo</th>
-      <th>Money</th>
-      <th>Tokuten</th>
-      <th>User</th>
+      <th>ジャンル</th>
+      <th>商品名</th>
+      <th>人名</th>
+      <th>発売日</th>
+      <th>予約店舗</th>
+      <th>金額</th>
+      <th>特典</th>
+      <th>ユーザー</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @stourokus.each do |stouroku| %>
+    <% @stourokus1.each do |stouroku| %>
       <tr>
-        <td><%= stouroku.genre_id;integer %></td>
+
+        <td><%= stouroku.genre_id %></td>
         <td><%= stouroku.name %></td>
         <td><%= stouroku.hito %></td>
         <td><%= stouroku.hatsubaiday %></td>
@@ -28,14 +33,60 @@
         <td><%= stouroku.money %></td>
         <td><%= stouroku.tokuten %></td>
         <td><%= stouroku.user_id %></td>
-        <td><%= link_to 'Show', stouroku %></td>
-        <td><%= link_to 'Edit', edit_stouroku_path(stouroku) %></td>
-        <td><%= link_to 'Destroy', stouroku, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+        <td><%= link_to '詳細', stouroku %></td>
+        <td><%= link_to '変更', edit_stouroku_path(stouroku) %></td>
+        <td><%= link_to '削除', stouroku, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+
+      </tr>      
+    <% end %>  
+  </tbody>  
 </table>
 
 <br>
 
-<%= link_to 'New Stouroku', new_stouroku_path %>
+<h1>完了</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ジャンル</th>
+      <th>商品名</th>
+      <th>人名</th>
+      <th>発売日</th>
+      <th>予約店舗</th>
+      <th>金額</th>
+      <th>特典</th>
+      <th>ユーザー</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stourokus2.each do |stouroku| %>
+      <tr>
+
+        <td><%= stouroku.genre_id %></td>
+        <td><%= stouroku.name %></td>
+        <td><%= stouroku.hito %></td>
+        <td><%= stouroku.hatsubaiday %></td>
+        <td><%= stouroku.tenpo %></td>
+        <td><%= stouroku.money %></td>
+        <td><%= stouroku.tokuten %></td>
+        <td><%= stouroku.user_id %></td>
+        <td><%= link_to '詳細', stouroku %></td>
+        <td><%= link_to '変更', edit_stouroku_path(stouroku) %></td>
+        <td><%= link_to '削除', stouroku, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+
+      </tr>      
+    <% end %>  
+  </tbody>  
+</table>
+
+<br>
+
+
+  <%= link_to '新規登録', new_stouroku_path %>
+
+
+
+

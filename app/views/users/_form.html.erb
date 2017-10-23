@@ -12,35 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :プロフィール画像 %>
+    <%= form.file_field :imagename, id: :user_imagename %>         
+  </div>
+
+  <div class="field">
+    <%= form.label :名前 %>
     <%= form.text_field :name, id: :user_name %>
   </div>
 
   <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password, id: :user_password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :imagename %>
-    <%= form.text_field :imagename, id: :user_imagename %>
-  </div>
-
-  <div class="field">
-    <%= form.label :imagetype %>
-    <%= form.text_field :imagetype, id: :user_imagetype %>
-  </div>
-
-  <div class="field">
-    <%= form.label :imagedate %>
-    <%= form.text_field :imagedate, id: :user_imagedate %>
-  </div>
-
-  <div class="field">
-    <%= form.label :account %>
+    <%= form.label :アカウント名 %>
     <%= form.text_field :account, id: :user_account %>
+  </div><br>
+  
+  <div class="field">
+    <%= form.label :パスワード %>
+    <%= form.password_field :password, id: :user_pasword %>
   </div>
-
+  
   <div class="actions">
     <%= form.submit %>
   </div>
