@@ -24,7 +24,7 @@
   <tbody>
     <% @stourokus1.each do |stouroku| %>
       <tr>
-        <td></td>
+
         <td><%= stouroku.genre_id %></td>
         <td><%= stouroku.name %></td>
         <td><%= stouroku.hito %></td>
@@ -35,7 +35,7 @@
         <td><%= stouroku.user_id %></td>
         <td><%= link_to '詳細', stouroku %></td>
         <td><%= link_to '変更', edit_stouroku_path(stouroku) %></td>
-        <td><%= link_to '削除', stouroku, method: :delete, data: { confirm: '本当に削除しますが?' } %></td>
+        <td><%= link_to '削除', stouroku, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
 
       </tr>      
     <% end %>  
@@ -64,7 +64,7 @@
   <tbody>
     <% @stourokus2.each do |stouroku| %>
       <tr>
-        <td></td>
+
         <td><%= stouroku.genre_id %></td>
         <td><%= stouroku.name %></td>
         <td><%= stouroku.hito %></td>
@@ -75,7 +75,7 @@
         <td><%= stouroku.user_id %></td>
         <td><%= link_to '詳細', stouroku %></td>
         <td><%= link_to '変更', edit_stouroku_path(stouroku) %></td>
-        <td><%= link_to '削除', stouroku, method: :delete, data: { confirm: '本当に削除しますが?' } %></td>
+        <td><%= link_to '削除', stouroku, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
 
       </tr>      
     <% end %>  
@@ -84,8 +84,8 @@
 
 <br>
 
+
   <%= link_to '新規登録', new_stouroku_path %>
-  <%= link_to 'TOP', 'http://localhost:3000/stourokus' %>
 
 
 
