@@ -12,43 +12,48 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :genre_id;integer %>
-    <%= form.text_field :genre_id;integer, id: :stouroku_genre_id;integer %>
+    <%= form.label :ジャンル %>
+    <%= form.text_field :genre_id, id: :stouroku_genre_id %>
   </div>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :商品名 %>
     <%= form.text_area :name, id: :stouroku_name %>
   </div>
 
   <div class="field">
-    <%= form.label :hito %>
+    <%= form.label :人名 %>
     <%= form.text_area :hito, id: :stouroku_hito %>
   </div>
 
   <div class="field">
-    <%= form.label :hatsubaiday %>
+    <%= form.label :発売日 %>
     <%= form.date_select :hatsubaiday, id: :stouroku_hatsubaiday %>
   </div>
 
   <div class="field">
-    <%= form.label :tenpo %>
+    <%= form.label :予約店舗 %>
     <%= form.text_field :tenpo, id: :stouroku_tenpo %>
   </div>
 
   <div class="field">
-    <%= form.label :money %>
+    <%= form.label :金額 %>
     <%= form.number_field :money, id: :stouroku_money %>
   </div>
 
   <div class="field">
-    <%= form.label :tokuten %>
+    <%= form.label :特典 %>
     <%= form.text_area :tokuten, id: :stouroku_tokuten %>
   </div>
 
   <div class="field">
-    <%= form.label :user_id %>
+    <%= form.label :ユーザー %>
     <%= form.number_field :user_id, id: :stouroku_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :チェック %>
+    <%= form.check_box :cd, id: :stouroku_cd %>
   </div>
 
   <div class="actions">
