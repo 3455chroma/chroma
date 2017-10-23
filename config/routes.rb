@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mtourokus
   resources :genres
   resources :users
   resources :stourokus

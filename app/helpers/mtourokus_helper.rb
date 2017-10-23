@@ -1,0 +1,2 @@
+module MtourokusHelper
+end

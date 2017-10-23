@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+ <strong>ジャンル:</strong>
+ <%= @mtouroku.genre.name %>
+</p>
+
+
+<p>
+  <strong>メモ:</strong>
+  <%= @mtouroku.memo %>
+</p>
+
+<%= link_to '変更', edit_mtouroku_path(@mtouroku) %> |
+<%= link_to '戻る', mtourokus_path %>
