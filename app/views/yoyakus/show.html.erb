@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>名前:</strong>
+  <%= @yoyaku.name %>
+</p>
+
+<p>
+  <strong>URL:</strong>
+  <%= @yoyaku.url %>
+</p>
+
+<%= link_to '変更', edit_yoyaku_path(@yoyaku) %> |
+<%= link_to 'トップに戻る', yoyakus_path %>

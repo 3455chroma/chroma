@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>予約</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>URL</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @yoyakus.each do |yoyaku| %>
+      <tr>
+        <td><%= yoyaku.name %></td>
+        <td><%= yoyaku.url %></td>
+        <td><%= link_to '詳細', yoyaku %></td>
+        <td><%= link_to '変更', edit_yoyaku_path(yoyaku) %></td>
+        <td><%= link_to '削除', yoyaku, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新しい予約', new_yoyaku_path %>

@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20171018011122) do
-=======
-ActiveRecord::Schema.define(version: 20171019001745) do
->>>>>>> ecfc684e46bd41f5ee63d6e38969ce0490aea575
+ActiveRecord::Schema.define(version: 20171023013204) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
@@ -50,6 +46,13 @@ ActiveRecord::Schema.define(version: 20171019001745) do
     t.string "imagetype"
     t.binary "imagedate"
     t.string "account"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "yoyakus", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
