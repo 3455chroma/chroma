@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'login/index'
+
+  post 'login/auth'
+
+  get 'home/kari'
+
   resources :mtourokus
   resources :genres
   resources :users
@@ -8,5 +14,7 @@ Rails.application.routes.draw do
       get 'show_image'
     end
   end
+
+  root 'home#kari'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
