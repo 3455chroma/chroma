@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>商品一覧</h1>
+<% gen = Genre.all %>
+  <ul>
+    <% gen.each do |g| %>
+      <li><%= link_to g.name,stourokus_path(:genre_id=>g.id) %></li>
+    <% end %>
+  </ul>
 
 <br>
 
