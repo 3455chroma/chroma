@@ -1,7 +1,7 @@
 <p style = "color: red;"><%= @error %></p>
 
-<%= form_tag action: :auth do %>
-
+<%= form_tag action: :auth do %>  
+  
     <div class = "field">
       <%= label_tag :account, 'アカウント' %>
       <%= text_field_tag :account, '' %>
@@ -16,8 +16,9 @@
     <%= hidden_field_tag :referer, flash[:referer] %>
     <div class = "actions">
       <%= submit_tag 'ログイン' %>
-    </div>
+      </div>
 
-<% end %>
 
-<%= link_to 'ユーザー登録', users_path %>
+      <% end %>
+      
+      <%= link_to 'ユーザー登録', users_path %>

@@ -3,7 +3,7 @@ class LoginController < ApplicationController
   skip_before_action :check_logined
 
   def index
-  end
+  end  
 
   def auth
     usr = User.authenticate(params[:account], params[:password])
@@ -20,4 +20,5 @@ class LoginController < ApplicationController
       render 'index' 
     end
   end
+
 end

@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :check_logined
-
   private
   def check_logined
     if session[:usr] then
@@ -13,6 +12,12 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def delete
+      reset_user_session
+      redirect_to session_index_url
+    end
+    
+
     unless @usr
       flash[:referer] = request.fullpath
       redirect_to controller: :login, action: :index
@@ -20,6 +25,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  
   # 現在のユーザーを取得する
   # @_current_userが空の場合は、session情報をキーにしてDBから検索する
 end
