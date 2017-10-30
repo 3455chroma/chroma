@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  require 'rmagick'
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   skip_before_action :check_logined
@@ -35,7 +36,8 @@ class UsersController < ApplicationController
     if params[:user][:imagename].present?
       @user.imagename = params[:user][:imagename].original_filename
       @user.imagetype = params[:user][:imagename].content_type
-      @user.imagedate = params[:user][:imagename].read
+      #@user.imagedate = params[:user][:imagename].read
+      @user.imagedate = create_square_image(Magick::Image.from_blob(params[:user][:imagename].read).shift, 300).to_blob # 追加
     end
 
     if @user.save
@@ -45,16 +47,6 @@ class UsersController < ApplicationController
     end
 
   end
-   # respond_to do |format|
-     # if @user.save
-       # format.html { redirect_to @user, notice: 'User was successfully created.' }
-        #format.json { render :show, status: :created, location: @user }
-      #else
-        #format.html { render :new }
-        #format.json { render json: @user.errors, status: :unprocessable_entity }
- #     end
- #   end
- # end
 
   ## PATCH/PUT /users/1
   ## PATCH/PUT /users/1.json
@@ -70,7 +62,8 @@ class UsersController < ApplicationController
     if params[:user][:imagename].present?
       @user.imagename = params[:user][:imagename].original_filename
       @user.imagetype = params[:user][:imagename].content_type
-      @user.imagedate = params[:user][:imagename].read
+      #@user.imagedate = params[:user][:imagename].read
+      @user.imagedate = create_square_image(Magick::Image.from_blob(params[:user][:imagename].read).shift, 300).to_blob # 追加 
     end
 
     if @user.save
@@ -79,25 +72,25 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-#    respond_to do |format|
-#      if @user.update(user_params)
-#        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-#        format.json { render :show, status: :ok, location: @user }
-#      else
-#        format.html { render :edit }
-#        format.json { render json: @user.errors, status: :unprocessable_entity }
-#      end
-#      end
-#    end
-#  end
+  #    respond_to do |format|
+  #      if @user.update(user_params)
+  #        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+  #        format.json { render :show, status: :ok, location: @user }
+  #      else
+  #        format.html { render :edit }
+  #        format.json { render json: @user.errors, status: :unprocessable_entity }
+  #      end
+  #      end
+  #    end
+  #  end
 
   def show_image
     @user = User.find(params[:id])
     send_data @user.imagedate, :filename => @user.imagename, :type => @user.imagetype, :disposition => 'inline'
   end
 
-#  # DELETE /users/1
-#  # DELETE /users/1.json
+  # DELETE /users/1
+  # DELETE /users/1.json
   def destroy
     @user.destroy
     respond_to do |format|
@@ -107,6 +100,10 @@ class UsersController < ApplicationController
   end
 
   private
+    def create_square_image(rmagick, size) 
+      narrow = rmagick.columns > rmagick.rows ? rmagick.rows : rmagick.columns 
+      rmagick.crop(Magick::CenterGravity, narrow, narrow).resize(size, size) 
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
@@ -116,4 +113,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :account, :password, :imagename, :imagetype, :imagedate)
     end
-end
+  end
+

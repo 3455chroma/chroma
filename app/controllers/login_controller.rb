@@ -21,4 +21,9 @@ class LoginController < ApplicationController
     end
   end
 
+  def logoff
+    session.delete(:usr)
+    redirect_to login_index_path
+  end
+
 end

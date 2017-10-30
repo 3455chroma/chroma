@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'login/index'
 
+  get 'login/logoff'  
+
   post 'login/auth'
 
   get 'home/kari'

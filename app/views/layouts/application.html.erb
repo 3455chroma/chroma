@@ -11,6 +11,7 @@
   <body>
     <% if @usr.present? %>
       <%= @usr.name %>
+      <%= link_to 'ログオフ', login_logoff_path %><br>      
     <% end %>  
     <%= yield %>
   </body>
