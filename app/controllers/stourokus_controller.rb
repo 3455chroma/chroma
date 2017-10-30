@@ -41,6 +41,7 @@ class StourokusController < ApplicationController
 
     @stouroku = Stouroku.new
     @stouroku.name          = params[:stouroku][:name]
+    @stouroku.genre_id      = params[:stouroku][:genre_id]    
     @stouroku.hito          = params[:stouroku][:hito]
     @stouroku.hatsubaiday   =
               Date.new(params[:stouroku][:'hatsubaiday(1i)'].to_i,
@@ -49,6 +50,7 @@ class StourokusController < ApplicationController
     @stouroku.tenpo         = params[:stouroku][:tenpo]
     @stouroku.money         = params[:stouroku][:money]
     @stouroku.tokuten       = params[:stouroku][:tokuten]
+    @stouroku.user_id       = params[:stouroku][:user_id]        
     @stouroku.cd       = params[:stouroku][:cd]
     
 
@@ -75,6 +77,7 @@ class StourokusController < ApplicationController
 #  end
 
   @stouroku.name          = params[:stouroku][:name]
+  @stouroku.genre_id      = params[:stouroku][:genre_id]    
   @stouroku.hito          = params[:stouroku][:hito]
   @stouroku.hatsubaiday   = 
             Date.new(params[:stouroku][:'hatsubaiday(1i)'].to_i,
@@ -83,6 +86,7 @@ class StourokusController < ApplicationController
   @stouroku.tenpo         = params[:stouroku][:tenpo]
   @stouroku.money         = params[:stouroku][:money]
   @stouroku.tokuten       = params[:stouroku][:tokuten] 
+  @stouroku.user_id       = params[:stouroku][:user_id]      
   @stouroku.cd       = params[:stouroku][:cd]
   
 
