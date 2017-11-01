@@ -1,4 +1,8 @@
 class Stouroku < ApplicationRecord
+
+    belongs_to :genre  
+    belongs_to :user
+
     validate :error_check
 
     def error_check

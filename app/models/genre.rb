@@ -1,6 +1,8 @@
 class Genre < ApplicationRecord
 
-has_many :mtourokus    
+has_many :mtourokus
+has_many :stourokus
+
 
 validate :error_check
 

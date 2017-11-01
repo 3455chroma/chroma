@@ -23,16 +23,24 @@
 
   <tbody>
     <% @stourokus1.each do |stouroku| %>
-      <tr>
 
-        <td><%= stouroku.genre_id %></td>
+        <td><%= stouroku.genre.name %></td>  
         <td><%= stouroku.name %></td>
         <td><%= stouroku.hito %></td>
-        <td><%= stouroku.hatsubaiday %></td>
+
+        <% if stouroku.hatsubaiday < Date.today
+        namecolor = "red"
+       else
+        namecolor = "black"
+       end
+        %>
+
+      <td style = "color : <%= namecolor %>"><%= stouroku.hatsubaiday %></td>
+
         <td><%= stouroku.tenpo %></td>
         <td><%= stouroku.money %></td>
         <td><%= stouroku.tokuten %></td>
-        <td><%= stouroku.user_id %></td>
+        <td><%= stouroku.user.name %></td>
         <td><%= link_to '詳細', stouroku %></td>
         <td><%= link_to '変更', edit_stouroku_path(stouroku) %></td>
         <td><%= link_to '削除', stouroku, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
@@ -65,14 +73,14 @@
     <% @stourokus2.each do |stouroku| %>
       <tr>
 
-        <td><%= stouroku.genre_id %></td>
+        <td><%= stouroku.genre.name %></td>
         <td><%= stouroku.name %></td>
         <td><%= stouroku.hito %></td>
         <td><%= stouroku.hatsubaiday %></td>
         <td><%= stouroku.tenpo %></td>
         <td><%= stouroku.money %></td>
         <td><%= stouroku.tokuten %></td>
-        <td><%= stouroku.user_id %></td>
+        <td><%= stouroku.user.name %></td>
         <td><%= link_to '詳細', stouroku %></td>
         <td><%= link_to '変更', edit_stouroku_path(stouroku) %></td>
         <td><%= link_to '削除', stouroku, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
