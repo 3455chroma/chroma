@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <% if @usr.present? %>
+      <%= @usr.name %>
+    <% end %>  
     <%= yield %>
   </body>
 </html>

@@ -20,4 +20,13 @@ class User < ApplicationRecord
             errors[:base] << 'パスワードは必ず入力してください。'
         end
     end
+
+    def self.authenticate(account,password)
+        usr = find_by(account: account)
+        if usr != nil && usr.password == password then
+           usr
+        else
+           return
+        end
+    end
 end

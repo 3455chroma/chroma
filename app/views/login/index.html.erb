@@ -1,0 +1,24 @@
+<p style = "color: red;"><%= @error %></p>
+
+<%= form_tag action: :auth do %>  
+  
+    <div class = "field">
+      <%= label_tag :account, 'アカウント' %>
+      <%= text_field_tag :account, '' %>
+    </div>
+
+    <div class = "field">
+      <%= label_tag :account, 'パスワード' %>
+      <%= password_field_tag :password, '' %>
+    </div>
+
+    <%# ログイン後にリダイレクトすべきアクションを隠しフィールドにセット %>
+    <%= hidden_field_tag :referer, flash[:referer] %>
+    <div class = "actions">
+      <%= submit_tag 'ログイン' %>
+      </div>
+
+
+      <% end %>
+      
+      <%= link_to 'ユーザー登録', users_path %>
