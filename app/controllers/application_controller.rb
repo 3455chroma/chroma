@@ -26,6 +26,5 @@ class ApplicationController < ActionController::Base
 
   private
   
-  # 現在のユーザーを取得する
-  # @_current_userが空の場合は、session情報をキーにしてDBから検索する
+
 end

@@ -11,8 +11,15 @@
   <body>
     <% if @usr.present? %>
       <%= @usr.name %>
-      <%= link_to 'ログオフ', login_logoff_path %><br>      
+      <div align="right"><%= link_to 'ログオフ', login_logoff_path %></div><br>      
     <% end %>  
     <%= yield %>
   </body>
+
+  <br>
+  <br>
+  <br>
+  <%= link_to 'ホーム(仮)に戻る', home_kari_path %>
+  
+
 </html>
