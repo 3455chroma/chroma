@@ -24,32 +24,56 @@ class GenresController < ApplicationController
   # POST /genres
   # POST /genres.json
   def create
-    @genre = Genre.new(genre_params)
-
-    respond_to do |format|
-      if @genre.save
-        format.html { redirect_to @genre, notice: 'Genre was successfully created.' }
-        format.json { render :show, status: :created, location: @genre }
-      else
-        format.html { render :new }
-        format.json { render json: @genre.errors, status: :unprocessable_entity }
-      end
+    @genre = Genre.new#(genre_params)
+ 
+    @genre.name = params[:genre][:name]
+    @genre.keyword_amazon = params[:genre][:keyword_amazon]
+    @genre.keyword_rakuten = params[:genre][:keyword_rakuten]
+ 
+    if @genre.save
+      redirect_to genres_path
+     else
+      render :new
     end
-  end
+ 
 
+    #respond_to do |format|
+    #  if @genre.save
+    #    format.html { redirect_to @genre, notice: 'Genre was successfully created.' }
+    #    format.json { render :show, status: :created, location: @genre }
+    #  else
+    #    format.html { render :new }
+    #    format.json { render json: @genre.errors, status: :unprocessable_entity }
+    #  end
+    #end
+  end
   # PATCH/PUT /genres/1
   # PATCH/PUT /genres/1.json
   def update
-    respond_to do |format|
-      if @genre.update(genre_params)
-        format.html { redirect_to @genre, notice: 'Genre was successfully updated.' }
-        format.json { render :show, status: :ok, location: @genre }
-      else
-        format.html { render :edit }
-        format.json { render json: @genre.errors, status: :unprocessable_entity }
-      end
+    @genre = Genre.find(params[:id])
+
+    @genre.name = params[:genre][:name]
+    @genre.keyword_amazon = params[:genre][:keyword_amazon]
+    @genre.keyword_rakuten = params[:genre][:keyword_rakuten]
+
+    if @genre.save
+      redirect_to genres_path
+    else
+      render :edit
     end
+
+     #respond_to do |format|
+     #  if @genre.update(genre_params)
+     #    format.html { redirect_to @genre, notice: 'Genre was successfully updated.' }
+     #     format.json { render :show, status: :ok, location: @genre }
+     #  else
+     #    format.html { render :edit }
+     #    format.json { render json: @genre.errors, status: :unprocessable_entity }
+     #  end
+     #end
   end
+
+
 
   # DELETE /genres/1
   # DELETE /genres/1.json
@@ -69,6 +93,6 @@ class GenresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def genre_params
-      params.require(:genre).permit(:name)
+      params.require(:genre).permit(:name, :keyword_amazon, :keyword_rakuten)
     end
 end

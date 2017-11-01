@@ -5,5 +5,15 @@
   <%= @genre.name %>
 </p>
 
+<p>
+  <strong>アマゾン:</strong>
+  <%= @genre.keyword_amazon %>
+</p>
+
+<p>
+<strong>楽天:</strong>
+<%= @genre.keyword_rakuten %>
+</p>
+
 <%= link_to '変更', edit_genre_path(@genre) %> |
 <%= link_to '戻る', genres_path %>

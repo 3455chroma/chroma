@@ -1,5 +1,5 @@
 class AddColumnStourokuCd < ActiveRecord::Migration[5.1]
   def change
-    add_column :stourokus, :cd, :boolean
+    add_column :stourokus, :cd, :boolean 
   end
 end

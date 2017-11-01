@@ -12,9 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :名前 %>
     <%= form.text_field :name, id: :genre_name %>
   </div>
+
+  <div class="field">
+    <%= form.label :アマゾン %>
+    <%= form.text_field :keyword_amazon, id: :genre_keyword_amazon %>
+  </div>
+
+  <div class="field">
+  <%= form.label :楽天 %>
+  <%= form.text_field :keyword_rakuten, id: :genre_keyword_rakuten %>
+</div>
+
 
   <div class="actions">
     <%= form.submit %>
