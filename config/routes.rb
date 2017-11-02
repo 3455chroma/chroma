@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :yoyakus
   get 'login/index'
 
+  get 'login/logoff'  
+
   post 'login/auth'
 
   get 'home/kari'
