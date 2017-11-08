@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>商品一覧</h1>
+
 <% gen = Genre.all %>
   <ul>
     <% gen.each do |g| %>
@@ -99,6 +101,6 @@
 
 
   <%= link_to '新規登録', new_stouroku_path %>
-  <%= link_to 'TOP',  'http://localhost:3000/stourokus'  %> 
+  <%= link_to '商品全ジャンル',  'http://localhost:3000/stourokus'  %> 
   
 
