@@ -29,6 +29,17 @@
   <div class="field">
     <%= form.label :パスワード %>
     <%= form.password_field :password, id: :user_password %>
+    <script>
+    function checkPassword(e) {
+        pass = document.getElementById("user_password");
+        if (e.checked) {
+            pass.setAttribute("type", "text");
+        } else {
+            pass.setAttribute("type", "password");
+        }
+    }
+    </script>
+    <input type="checkbox" onclick="checkPassword(this)" />
   </div>
   
   <div class="actions">
