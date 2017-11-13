@@ -4,12 +4,12 @@
   
     <div class = "field">
       <%= label_tag :account, 'アカウント' %>
-      <%= text_field_tag :account, '' %>
+      <%= text_field_tag :account, '', autocomplete: 'off'  %>
     </div>
-
+  
     <div class = "field">
       <%= label_tag :account, 'パスワード' %>
-      <%= password_field_tag :password, '' %> 
+      <%= password_field_tag :password, '', autocomplete: 'off'  %> 
       <script>
         function checkPassword(e) {
           pass = document.getElementById("password");
@@ -20,7 +20,7 @@
           }
       }
       </script>
-      <input type="checkbox" onclick="checkPassword(this)" />     
+      <input type="checkbox" onclick="checkPassword(this)" />
     </div>
 
     <%# ログイン後にリダイレクトすべきアクションを隠しフィールドにセット %>
