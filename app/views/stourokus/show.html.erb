@@ -2,6 +2,14 @@
 
 <h1>商品詳細</h1>
 
+<% yoy = Yoyaku.all %>
+<ul>
+  <% yoy.each do |y| %>
+    <li><%= link_to y.name,stourokus_path %></li>
+  <% end %>
+</ul>
+
+ 
 <br>
 
 <p>
@@ -43,6 +51,4 @@
   <strong>ユーザー</strong>
   <%= @stouroku.user.name %>
 </p>
-
-
 <%= link_to 'TOP',  'http://localhost:3000/stourokus'  %> 

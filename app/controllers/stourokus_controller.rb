@@ -9,7 +9,7 @@ class StourokusController < ApplicationController
     if params[:genre_id].present?
       @stourokus1 = Stouroku.where(cd:false,genre_id:params[:genre_id])
       @stourokus2 = Stouroku.where(cd:true,genre_id:params[:genre_id])
-      
+       
     else 
       @stourokus1 = Stouroku.where(cd:false)
       @stourokus2 = Stouroku.where(cd:true)
@@ -62,7 +62,7 @@ class StourokusController < ApplicationController
     
 
     if @stouroku.save
-      redirect_to stourokus_path
+      redirect_to @stouroku
     else
       render :new
     end
