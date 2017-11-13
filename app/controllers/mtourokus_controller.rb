@@ -4,7 +4,11 @@ class MtourokusController < ApplicationController
   # GET /mtourokus
   # GET /mtourokus.json
   def index
-    @mtourokus = Mtouroku.all
+    if params[:genre_id].present?
+      @mtourokus = Mtouroku.where(genre_id:params[:genre_id])
+    else  
+      @mtourokus = Mtouroku.all
+    end  
   end
 
   # GET /mtourokus/1
