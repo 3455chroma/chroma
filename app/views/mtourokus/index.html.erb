@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>メモ登録画面</h1>
+<h1>メモ一覧</h1>
+
+<% gen = Genre.all %>
+<ul>
+  <% gen.each do |g| %>
+    <li><%= link_to g.name,mtourokus_path(:genre_id=>g.id) %></li>
+  <% end %>
+</ul>
+
+<br>
 
 <table>
   <thead>
@@ -33,3 +42,4 @@
 <br>
 
 <%= link_to '新規メモ登録', new_mtouroku_path %>
+<%= link_to 'メモ全ジャンル', 'http://localhost:3000/mtourokus' %>
