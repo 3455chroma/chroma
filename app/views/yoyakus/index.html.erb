@@ -14,7 +14,7 @@
   <tbody>
     <% @yoyakus.each do |yoyaku| %>
       <tr>
-        <td><%= yoyaku.name %></td>
+        <td><%= link_to yoyaku.name, yoyaku.url.gsub('@genre@', '').gsub('@name@', '') %></td>
         <td><%= yoyaku.url %></td>
         <td><%= link_to '詳細', yoyaku %></td>
         <td><%= link_to '変更', edit_yoyaku_path(yoyaku) %></td>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to '新しい予約', new_yoyaku_path %>
+<%= link_to '追加予約', new_yoyaku_path %>
