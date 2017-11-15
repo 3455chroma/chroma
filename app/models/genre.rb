@@ -2,6 +2,7 @@ class Genre < ApplicationRecord
 
 has_many :mtourokus
 has_many :stourokus
+has_many :genrekeyword
 
 
 validate :error_check

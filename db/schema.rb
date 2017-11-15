@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171030003436) do
+ActiveRecord::Schema.define(version: 20171115005145) do
+
+  create_table "genrekeywords", force: :cascade do |t|
+    t.integer "genre_id"
+    t.integer "yoyaku_id"
+    t.string "keyword"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
@@ -18,6 +26,11 @@ ActiveRecord::Schema.define(version: 20171030003436) do
     t.datetime "updated_at", null: false
     t.string "keyword_amazon"
     t.string "keyword_rakuten"
+    t.string "keyword_tsutaya"
+    t.string "keyword_honyaclub"
+    t.string "keyword_routike"
+    t.string "keyword_yahoo"
+    t.string "keyword_seven"
   end
 
   create_table "mtourokus", force: :cascade do |t|

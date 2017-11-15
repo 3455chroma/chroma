@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :genrekeywords
   resources :yoyakus
   get 'login/index'
 

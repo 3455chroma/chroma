@@ -31,7 +31,6 @@
         </td>       
 
         <td><%= simple_format(h mtouroku.memo) %></td>
-        <td><%= link_to '詳細', mtouroku %></td>
         <td><%= link_to '変更', edit_mtouroku_path(mtouroku) %></td>
         <td><%= link_to '削除', mtouroku, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
       </tr>
