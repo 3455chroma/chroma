@@ -7,12 +7,14 @@ class StourokusController < ApplicationController
   #  @stourokus1 = Stouroku.where(cd:false)
   #  @stourokus2 = Stouroku.where(cd:true)
     if params[:genre_id].present?
-      @stourokus1 = Stouroku.where(cd:false,genre_id:params[:genre_id],user_id:session[:usr])
-      @stourokus2 = Stouroku.where(cd:true,genre_id:params[:genre_id],user_id:session[:usr])
-
+      @stourokus1 = Stouroku.where(cd: false, dvd:false,genre_id: params[:genre_id],user_id: session[:usr])
+      @stourokus2 = Stouroku.where(cd: true, genre_id: params[:genre_id],user_id: session[:usr])
+      @stourokus3 = Stouroku.where(cd: false, dvd:true, genre_id: params[:genre_id],user_id: session[:usr])
     else 
-      @stourokus1 = Stouroku.where(cd:false,user_id:session[:usr])
-      @stourokus2 = Stouroku.where(cd:true,user_id:session[:usr])
+      @stourokus1 = Stouroku.where(cd: false, dvd: false,user_id: session[:usr])
+      @stourokus2 = Stouroku.where(cd: true, user_id: session[:usr])
+      @stourokus3 = Stouroku.where(dvd:true, user_id: session[:usr])
+      
     end 
   end
 
@@ -61,6 +63,8 @@ class StourokusController < ApplicationController
     @stouroku.tokuten       = params[:stouroku][:tokuten]
     @stouroku.user_id       = session[:usr]      
     @stouroku.cd       = params[:stouroku][:cd]
+    @stouroku.dvd       = params[:stouroku][:dvd]
+    
     
 
     if @stouroku.save
@@ -97,6 +101,8 @@ class StourokusController < ApplicationController
   @stouroku.tokuten       = params[:stouroku][:tokuten] 
   @stouroku.user_id       = session[:usr]   
   @stouroku.cd       = params[:stouroku][:cd]
+  @stouroku.dvd       = params[:stouroku][:dvd]
+  
   
 
   if @stouroku.save
@@ -124,6 +130,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stouroku_params
-      params.require(:stouroku).permit(:genre_id, :name, :hito, :hatsubaiday, :tenpo, :money, :tokuten, :user_id, :cd)
+      params.require(:stouroku).permit(:genre_id, :name, :hito, :hatsubaiday, :tenpo, :money, :tokuten, :user_id, :cd, :dvd)
     end
 end
