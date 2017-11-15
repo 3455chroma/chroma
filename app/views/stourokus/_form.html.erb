@@ -46,15 +46,23 @@
     <%= form.text_area :tokuten, id: :stouroku_tokuten %>
   </div>
 
-  <div class="field">
+<!--  <div class="field">
     <%= form.label :ユーザー %>
     <%= form.select :user_id, User.all.map{|u|[u.name,u.id]} %> 
-    </div>
+    </div> -->
 
   <div class="field">
-    <%= form.label :チェック %>
+    <%= form.label :受け取り %>
     <%= form.check_box :cd, id: :stouroku_cd %>
   </div>
+
+  <div class="field">
+  <%= form.label :予約 %>
+  <%= form.check_box :dvd, id: :stouroku_dvd %>
+</div>
+
+
+  
 
   <div class="actions">
     <%= form.submit %>

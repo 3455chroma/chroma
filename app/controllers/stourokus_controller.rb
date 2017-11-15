@@ -7,18 +7,20 @@ class StourokusController < ApplicationController
   #  @stourokus1 = Stouroku.where(cd:false)
   #  @stourokus2 = Stouroku.where(cd:true)
     if params[:genre_id].present?
-      @stourokus1 = Stouroku.where(cd:false,genre_id:params[:genre_id])
-      @stourokus2 = Stouroku.where(cd:true,genre_id:params[:genre_id])
-       
+      @stourokus1 = Stouroku.where(cd:false,genre_id:params[:genre_id],user_id:session[:usr])
+      @stourokus2 = Stouroku.where(cd:true,genre_id:params[:genre_id],user_id:session[:usr])
+
     else 
-      @stourokus1 = Stouroku.where(cd:false)
-      @stourokus2 = Stouroku.where(cd:true)
+      @stourokus1 = Stouroku.where(cd:false,user_id:session[:usr])
+      @stourokus2 = Stouroku.where(cd:true,user_id:session[:usr])
     end 
   end
 
   # GET /stourokus/1
   # GET /stourokus/1.json
   def show
+    @yoyaku = Yoyaku.all
+    @genre = Genre.all
   end
 
   # GET /stourokus/new
@@ -57,7 +59,7 @@ class StourokusController < ApplicationController
     @stouroku.tenpo         = params[:stouroku][:tenpo]
     @stouroku.money         = params[:stouroku][:money]
     @stouroku.tokuten       = params[:stouroku][:tokuten]
-    @stouroku.user_id       = params[:stouroku][:user_id]        
+    @stouroku.user_id       = session[:usr]      
     @stouroku.cd       = params[:stouroku][:cd]
     
 
@@ -93,7 +95,7 @@ class StourokusController < ApplicationController
   @stouroku.tenpo         = params[:stouroku][:tenpo]
   @stouroku.money         = params[:stouroku][:money]
   @stouroku.tokuten       = params[:stouroku][:tokuten] 
-  @stouroku.user_id       = params[:stouroku][:user_id]      
+  @stouroku.user_id       = session[:usr]   
   @stouroku.cd       = params[:stouroku][:cd]
   
 
