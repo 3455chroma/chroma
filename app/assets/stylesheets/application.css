@@ -15,7 +15,11 @@
  */
  
 body { padding-top: 50px; }
-
 footer { margin-top: 50px; }
 table, td, th { vertical-align: middle; border: none; }
-th { border-bottom: 1px solid #9E9E9E; }
+th { border-bottom: 1px solid #AAAAAA; }
+
+.logo{
+    width: 800px;
+    height: 115px;
+}
