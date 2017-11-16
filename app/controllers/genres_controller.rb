@@ -30,8 +30,6 @@ class GenresController < ApplicationController
     @genre.keyword_amazon = params[:genre][:keyword_amazon]
     @genre.keyword_rakuten = params[:genre][:keyword_rakuten]
     @genre.keyword_tsutaya = params[:genre][:keyword_tsutaya]
-    @genre.keyword_honyaclub = params[:genre][:keyword_honyaclub]
-    @genre.keyword_routike = params[:genre][:keyword_routike]
     @genre.keyword_yahoo = params[:genre][:keyword_yahoo]
     @genre.keyword_seven = params[:genre][:keyword_seven]
  
@@ -61,8 +59,6 @@ class GenresController < ApplicationController
     @genre.keyword_amazon = params[:genre][:keyword_amazon]
     @genre.keyword_rakuten = params[:genre][:keyword_rakuten]
     @genre.keyword_tsutaya = params[:genre][:keyword_tsutaya]
-    @genre.keyword_honyaclub = params[:genre][:keyword_honyaclub]
-    @genre.keyword_routike = params[:genre][:keyword_routike]
     @genre.keyword_yahoo = params[:genre][:keyword_yahoo]
     @genre.keyword_seven = params[:genre][:keyword_seven]
 
@@ -103,6 +99,6 @@ class GenresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def genre_params
-      params.require(:genre).permit(:name, :keyword_amazon, :keyword_rakuten, :keyword_tsutaya, :keyword_honyaclub, :keyword_routike, :keyword_yahoo, :keyword_seven)
+      params.require(:genre).permit(:name, :keyword_amazon, :keyword_rakuten, :keyword_tsutaya, :keyword_yahoo, :keyword_seven)
     end
 end
