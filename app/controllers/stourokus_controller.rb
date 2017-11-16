@@ -7,13 +7,13 @@ class StourokusController < ApplicationController
   #  @stourokus1 = Stouroku.where(cd:false)
   #  @stourokus2 = Stouroku.where(cd:true)
     if params[:genre_id].present?
-      @stourokus1 = Stouroku.where(cd: false, dvd:false,genre_id: params[:genre_id],user_id: session[:usr])
+      @stourokus1 = Stouroku.where(cd: false). where(dvd:false,genre_id: params[:genre_id],user_id: session[:usr])
       @stourokus2 = Stouroku.where(cd: true, genre_id: params[:genre_id],user_id: session[:usr])
-      @stourokus3 = Stouroku.where(cd: false, dvd:true, genre_id: params[:genre_id],user_id: session[:usr])
+      @stourokus3 = Stouroku.where(cd: false). where(dvd:true, genre_id: params[:genre_id],user_id: session[:usr])
     else 
-      @stourokus1 = Stouroku.where(cd: false, dvd: false,user_id: session[:usr])
+      @stourokus1 = Stouroku.where(cd: false). where(dvd: false,user_id: session[:usr])
       @stourokus2 = Stouroku.where(cd: true, user_id: session[:usr])
-      @stourokus3 = Stouroku.where(dvd:true, user_id: session[:usr])
+      @stourokus3 = Stouroku.where(cd: false). where(dvd:true, user_id: session[:usr])
       
     end 
   end
