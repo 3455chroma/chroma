@@ -10,7 +10,7 @@ class MtourokusController < ApplicationController
       @mtourokus = Mtouroku.all
     end  
   end
-
+ 
   # GET /mtourokus/1
   # GET /mtourokus/1.json
   def show

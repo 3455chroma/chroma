@@ -2,6 +2,23 @@
 
 <h1>商品詳細</h1>
 
+  <% @yoyaku.each do |y| %>
+<%
+  keyword = ''
+  case y.id
+    when 1 #amazon
+      keyword = @stouroku.genre.keyword_amazon
+
+    when 2 #rakuten
+      keyword = @stouroku.genre.keyword_rakuten
+
+  end
+%>
+    <li><%= link_to y.name,y.url.gsub('@name@',@stouroku.name).gsub('@genre@',keyword) %></li>
+  <% end %>
+</ul>
+
+ 
 <br>
 
 <p>
@@ -39,10 +56,10 @@
   <%= @stouroku.tokuten %>
 </p>
 
-<p>
+<!-- <p>
   <strong>ユーザー</strong>
   <%= @stouroku.user.name %>
-</p>
+</p> -->
 
-
-<%= link_to 'TOP',  'http://localhost:3000/stourokus'  %> 
+<%= link_to '新規登録', new_stouroku_path %>
+<%= link_to '戻る',  'http://localhost:3000/stourokus'  %> 

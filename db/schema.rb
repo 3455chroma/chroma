@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20171115005145) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "cd"
+    t.boolean "dvd"
   end
 
   create_table "users", force: :cascade do |t|
