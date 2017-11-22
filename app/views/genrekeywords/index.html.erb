@@ -3,30 +3,30 @@
 <h1>ジャンルキーワード</h1>
 
 <table>
+
   <thead>
     <tr>
       <th>ジャンル</th>
       <th>予約</th>
       <th>キーワード</th>
-      <th colspan="3"></th>
+      <th colspan="3"></th
     </tr>
   </thead>
 
   <tbody>
     <% @genrekeywords.each do |genrekeyword| %>
       <tr>
-
         <td><%= genrekeyword.genre.name %></td>
-        <td><%= genrekeyword.yoyaku_id %></td>
+        <td><%= genrekeyword.yoyaku.name %></td>
         <td><%= genrekeyword.keyword %></td>
         <td><%= link_to '詳細', genrekeyword %></td>
         <td><%= link_to '変更', edit_genrekeyword_path(genrekeyword) %></td>
-        <td><%= link_to '削除', genrekeyword, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '削除', genrekeyword, method: :delete, data: { confirm: '本当に削除してもいいですか?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+    
 <br>
 
 <%= link_to '新規作成', new_genrekeyword_path %>
