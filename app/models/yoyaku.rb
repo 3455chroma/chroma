@@ -1,5 +1,7 @@
 class Yoyaku < ApplicationRecord
 
+  has_many :genrekeyword
+
   validate :error_check
 
   def error_check

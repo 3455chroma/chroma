@@ -1,0 +1,32 @@
+<%= form_with(model: genrekeyword, local: true) do |form| %>
+  <% if genrekeyword.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(genrekeyword.errors.count, "error") %> prohibited this genrekeyword from being saved:</h2>
+
+      <ul>
+      <% genrekeyword.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ジャンルid %>
+    <%= form.select :genre_id, Genre.all.map{|b|[b.name,b.id]} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :予約id %>
+    <%= form.select :yoyaku_id, Yoyaku.all.map{|b|[b.name,b.id]} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :キーワード %>
+    <%= form.text_field :keyword, id: :genrekeyword_keyword %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

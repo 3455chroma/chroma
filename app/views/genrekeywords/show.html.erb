@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ジャンル:</strong>
+  <%= @genrekeyword.genre.name %>
+</p>
+
+<p>
+  <strong>予約:</strong>
+  <%= @genrekeyword.yoyaku.name %>
+</p>
+
+<p>
+  <strong>キーワード:</strong>
+  <%= @genrekeyword.keyword %>
+</p>
+
+<%= link_to '変更', edit_genrekeyword_path(@genrekeyword) %> |
+<%= link_to '戻る', genrekeywords_path %>

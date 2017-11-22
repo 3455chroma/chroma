@@ -11,9 +11,35 @@
 </p>
 
 <p>
-<strong>楽天:</strong>
-<%= @genre.keyword_rakuten %>
+  <strong>楽天:</strong>
+  <%= @genre.keyword_rakuten %>
 </p>
+
+<p>
+  <strong>tsutaya:</strong>
+  <%= @genre.keyword_tsutaya %>
+</p>
+
+<p>
+  <strong>Honyalub:</strong>
+  <%= @genre.keyword_honyaclub %>
+</p>
+
+<p>
+  <strong>ローチケHMV:</strong>
+  <%= @genre.keyword_routike %>
+</p>
+
+<p>
+  <strong>yahooショッピング:</strong>
+  <%= @genre.keyword_yahoo %>
+</p>
+
+<p>
+  <strong>セブンネットショッピング:</strong>
+  <%= @genre.keyword_seven %>
+</p>
+
 
 <%= link_to '変更', edit_genre_path(@genre) %> |
 <%= link_to '戻る', genres_path %>
