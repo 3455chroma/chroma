@@ -19,9 +19,27 @@ footer { margin-top: 50px; }
 table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #AAAAAA; }
 
+body {
+    font-family:'HG丸ｺﾞｼｯｸM-PRO';
+}
 
+body { font-size: 200%; }
 
 .logo{
-    width: 500px;
-    height: 85px;
+    width: 400px;
+    height: 70px;
 }
+
+.logout{
+    width: 100px;
+    height: 60px;
+}
+
+.top{
+    width: 160x;
+    height: 45px;
+}
+
+.logo:hover {background-color: #ffffff; }
+
+.logout:hover {background-color: #ffffff; }
