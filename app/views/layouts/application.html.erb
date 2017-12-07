@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>  
-
+  </head>
+  
   <body>
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">  
@@ -31,22 +31,27 @@
 </nav>
     <% if @usr.present? %>
       <%= @usr.name %>
-      <div align="right"><%= link_to 'ログオフ', login_logoff_path %></div><br>      
-    <% end %> 
+        <!-- <div align="right"> -->
+        <div align="right" style="position: absolute; right: 0; top: 75px;">
+         <%= link_to image_tag('logout.png', class:'logout'), login_logoff_path %><br>
+        </div>
+     <% end %> 
+
     <div class="container"> 
       <%= yield %>
     </div>
     <br>
-    <br>
-    <%= link_to 'ホーム(仮)に戻る', home_kari_path %>
-    <footer>
-    <div class="container">
-      Rails Girls 2017
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!-- <%= link_to 'ホーム(仮)に戻る', home_kari_path %> -->
+    <div align="right" style="position: absolute; left: 0;">    
+    <%= link_to image_tag('top.png', class:'top'), home_kari_path %><br>    
     </div>
+    <footer>
+    <div class="container"><font size = 3>
+      Rails Girls 2017
+    </font></div>
   </footer>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </body>
-
-  
+  </body>  
 
 </html>

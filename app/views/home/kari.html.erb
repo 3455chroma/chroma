@@ -7,13 +7,10 @@
 <%= link_to '予約', yoyakus_path %><br><br>
 <%= link_to 'ジャンルキーワード', genrekeywords_path %>
 
-<div align="right">
-<h1><%= link_to image_tag('newtouroku.png', class:'logo'), 'http://localhost:3000/stourokus/new' %></h1>
-<h2><%= link_to image_tag('cd.png', class:'logo'), 'http://localhost:3000/stourokus?genre_id=2' %></h2>
-<h3><%= link_to image_tag('dvd.png', class:'logo'), 'http://localhost:3000/stourokus?genre_id=3' %></h3>
-<h4><%= link_to image_tag('hon.png', class:'logo'), 'http://localhost:3000/stourokus?genre_id=1' %></h4>
-<h5><%= link_to image_tag('memo.png', class:'logo'), 'http://localhost:3000/mtourokus' %></h5>
+<div align="right" style="position: absolute; right: 0; top: 390px;">
+<%= link_to image_tag('newtouroku.png', class:'logo'), new_stouroku_path %><br>
+<%= link_to image_tag('cd.png', class:'logo'), stourokus_path(genre_id: 3) %><br>
+<%= link_to image_tag('dvd.png', class:'logo'), stourokus_path(genre_id: 4) %><br>
+<%= link_to image_tag('hon.png', class:'logo'), stourokus_path(genre_id: 2) %><br>
+<%= link_to image_tag('memo.png', class:'logo'), mtourokus_path %><br>
 </div>
-
-
-
