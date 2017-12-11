@@ -117,7 +117,7 @@
       <th>予約店舗</th>
       <th>金額</th>
       <th>特典</th>
-<!--      <th>ユーザー</th> -->
+<!--  <th>ユーザー</th> -->
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -125,7 +125,7 @@
   <tbody>
     <% @stourokus2.each do |stouroku| %>
       <tr>
-        <% if Time.now - stouroku.updated_at < 864000 %>
+      <% if Time.now - stouroku.updated_at < 1728000 %>
           
         <td><%= stouroku.genre.name %></td>
         <td><%= stouroku.name %></td>
@@ -138,6 +138,7 @@
         <td><%= link_to '詳細', stouroku %></td>
         <td><%= link_to '変更', edit_stouroku_path(stouroku) %></td>
         <td><%= link_to '削除', stouroku, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+
         <% end %>
         </tr>      
     <% end %>  
@@ -146,8 +147,11 @@
 
 <br>
 
+<br>
+
+  <%= button_to '完了全件表示', @stouroku2, :method => :get %>
+
+  <br>
 
   <%= link_to '新規登録', new_stouroku_path %>
   <%= link_to '商品全ジャンル',  'http://localhost:3000/stourokus'  %> 
-  
-
