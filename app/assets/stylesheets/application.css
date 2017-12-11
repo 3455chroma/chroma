@@ -14,7 +14,7 @@
  *= require_self
  */
 
-body { padding-top: 50px; }
+body { padding-top: 30px; }
 footer { margin-top: 50px; }
 table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #AAAAAA; }
@@ -23,21 +23,21 @@ body {
     font-family: 'HG丸ｺﾞｼｯｸM-PRO';
   }
 
-body { font-size: 200%; }
+body { font-size: 150%; }
 
 .logo{
-    width: 400px;
-    height: 70px;
+    width: 290px;
+    height: 53px;
 }
 
 .logout{
-    width: 100px;
-    height: 60px;
+    width: 75px;
+    height: 50px;
 }
 
 .top{
-    width: 160x;
-    height: 45px;
+    width: 148x;
+    height: 38px;
 }
 
 .logo:hover {background-color: #ffffff; }

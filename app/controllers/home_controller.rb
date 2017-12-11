@@ -4,4 +4,5 @@ class HomeController < ApplicationController
     @cd = Genre.where(name: "CD")
     @dvd = Genre.where(name: "DVD")
   end
+  
 end

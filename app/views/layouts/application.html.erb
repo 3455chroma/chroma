@@ -38,7 +38,7 @@
     <% if @usr.present? %>
       <%= @usr.name %>
         <!-- <div align="right"> -->
-        <div align="right" style="position: absolute; right: 0; top: 75px;">
+        <div align="right" style="position: absolute; right: 0; top: 60px;">
          <%= link_to image_tag('logout.png', class:'logout'), login_logoff_path %><br>
         </div>
      <% end %> 
@@ -49,10 +49,11 @@
     <br>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <!-- <%= link_to 'ホーム(仮)に戻る', home_kari_path %> -->
-    <div align="right" style="position: absolute; left: 0;">    
+    <div align="right" style="position: absolute; left: 0; top: 600px">    
     <%= link_to image_tag('top.png', class:'top'), home_kari_path %><br>    
     </div>
     <footer>
+    <br><br><br><br><br>
     <div class="container-fluid"><font size = 3>
       Rails Girls 2017
     </font></div>
