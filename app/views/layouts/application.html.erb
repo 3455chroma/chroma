@@ -1,4 +1,4 @@
-yellow<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Chroma</title>
@@ -13,32 +13,28 @@ yellow<!DOCTYPE html>
 
   <% 
   case controller.controller_name 
-  when "genres" 
-  @color = "red" 
-  when "genrekeywords" 
-  @color = "blue" 
+  
   when "stourokus"
+    if params[:genre_id].present?
     case Genre.find(params[:genre_id]).name
     when "CD"
-      @color = "#efffff" 
+      @color = "#efffff"
     when "DVD"
       @color = "#efffef" 
     when "本"
       @color = "#ffffef" 
-    end 
+    end
+    else
+      @color = "#ffefff"
+    end
   when "mtourokus" 
   @color = "#fff4ea"
-  when "yoyakus" 
-  @color = "blue"
-  when "users" 
-  @color = "blue"
   else 
   @color = "#ffffff" 
   end 
   %>
   
   <body>
-<<<<<<< HEAD
   <body style="background-color: <%= @color %>;">  
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">  
@@ -58,31 +54,6 @@ yellow<!DOCTYPE html>
     </div> --!>
   </div>
 </nav>
-=======
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container-fluid">  
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/"><font face="ふぁんしーはーと" font size=10><font color="red">C</font><font color="#9932cc">h</font><font color="blue">r</font><font color="green">o</font><font color="yellow">m</font><font color="orange">a</font></font></a>
-        </div>
-        <div class="collapse navbar-collapse"> 
-          <ul class="nav navbar-nav"> 
-            <li><%= link_to '商品登録', stourokus_path %></li> 
-            <li><%= link_to 'ジャンル', genres_path %></li> 
-            <li><%= link_to 'メモ登録', mtourokus_path %></li> 
-            <li><%= link_to 'ユーザー登録', users_path %></li> 
-            <li><%= link_to '予約', yoyakus_path %></li> 
-            <li><%= link_to 'ジャンルキーワード', genrekeywords_path %></li> 
-          </ul> 
-        </div>
-      </div>
-    </nav>
->>>>>>> a30cffef75846f973a924a78bf57b28c3b09661a
     <% if @usr.present? %>
       <%= @usr.name %>
         <!-- <div align="right"> -->
