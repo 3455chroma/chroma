@@ -18,19 +18,19 @@
     if params[:genre_id].present?
     case Genre.find(params[:genre_id]).name
     when "CD"
-      @color = "#efffff"
+      @erasercolor = @color = "#efffff"
     when "DVD"
-      @color = "#efffef" 
+      @erasercolor = @color = "#efffef" 
     when "本"
-      @color = "#ffffef" 
+      @erasercolor = @color = "#ffffef" 
     end
     else
-      @color = "#ffefff"
+      @erasercolor = @color = "#ffefff"
     end
   when "mtourokus" 
-  @color = "#fff4ea"
+    @erasercolor = @color = "#fff4ea"
   else 
-  @color = "#ffffff" 
+    @erasercolor = @color = "#ffffff" 
   end 
   %>
   
@@ -58,7 +58,7 @@
       <%= @usr.name %>
         <!-- <div align="right"> -->
         <div align="right" style="position: absolute; right: 0; top: 75px;">
-         <%= link_to image_tag('logout.png', class:'logout'), login_logoff_path %><br>
+         <%= link_to image_tag('logout.png', class:'logout',style:"background-color:#{@erasercolor}"), login_logoff_path %><br>
         </div>
      <% end %> 
 
