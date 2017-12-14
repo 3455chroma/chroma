@@ -1,6 +1,6 @@
 class StourokusController < ApplicationController
   before_action :set_stouroku, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_all
   # GET /stourokus
   # GET /stourokus.json
   def index
@@ -14,8 +14,8 @@ class StourokusController < ApplicationController
       @stourokus1 = Stouroku.where(cd: false). where(dvd: false,user_id: session[:usr])
       @stourokus2 = Stouroku.where(cd: true, user_id: session[:usr])
       @stourokus3 = Stouroku.where(cd: false). where(dvd:true, user_id: session[:usr])
-      
-    end 
+    end
+
   end
 
   # GET /stourokus/1
@@ -23,6 +23,7 @@ class StourokusController < ApplicationController
   def show
     @yoyaku = Yoyaku.all
     @genre = Genre.all
+    
   end
 
   # GET /stourokus/new
@@ -117,7 +118,7 @@ end
   def destroy
     @stouroku.destroy
     respond_to do |format|
-      format.html { redirect_to stourokus_url, notice: 'Stouroku was successfully destroyed.' }
+      format.html { redirect_to stourokus_url(:all=>@all), notice: 'Stouroku was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -127,7 +128,13 @@ end
     def set_stouroku
       @stouroku = Stouroku.find(params[:id])
     end
-
+    def set_all
+      if params[:all].present?
+        @all = true
+      else
+        @all = false
+      end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def stouroku_params
       params.require(:stouroku).permit(:genre_id, :name, :hito, :hatsubaiday, :tenpo, :money, :tokuten, :user_id, :cd, :dvd)
