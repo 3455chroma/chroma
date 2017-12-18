@@ -23,7 +23,7 @@ class StourokusController < ApplicationController
   def show
     @yoyaku = Yoyaku.all
     @genre = Genre.all
-    
+
   end
 
   # GET /stourokus/new
