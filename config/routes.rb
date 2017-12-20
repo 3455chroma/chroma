@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'memo/top'
+
   resources :genrekeywords
   resources :yoyakus
   get 'login/index'
