@@ -1,9 +1,45 @@
 <h1>通知</h1>
 <br>
 
-<% @tsuchi.each do |tsuchi| %>
+<% @tsuchi1.each do |tsuchi| %>
   <div>
+    <td><%= tsuchi.name %>  の発売日まで あと３日です</td>
+  </div>
+<% end %>
 
+<% @tsuchi2.each do |tsuchi| %>
+  <div>
+    <td><%= tsuchi.name %>  の発売日まで あと２日です</td>
+  </div>
+<% end %>
+
+<% @tsuchi3.each do |tsuchi| %>
+  <div>
+    <td><%= tsuchi.name %>  の発売日は明日です</td>
+  </div>
+<% end %>
+
+<% @tsuchi4.each do |tsuchi| %>
+  <div>
+    <td><%= tsuchi.name %>  の発売日です</td>
+  </div>
+<% end %>
+
+<% @tsuchi5.each do |tsuchi| %>
+  <div>
+    <td><%= tsuchi.name %>  の受け取りができます</td>
+  </div>
+<% end %>
+
+<% @tsuchi6.each do |tsuchi| %>
+  <div>
+    <td><%= tsuchi.name %>  の受け取りができます</td>
+  </div>
+<% end %>
+
+<% @tsuchi7.each do |tsuchi| %>
+  <div>
+    <td><%= tsuchi.name %>  の受け取りができます</td>
   </div>
 <% end %>
 
