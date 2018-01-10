@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
 
   
 
-  private
+ private 
   
 
 end

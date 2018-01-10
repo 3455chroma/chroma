@@ -41,13 +41,25 @@ body { font-size: 150%; }
     height: 38px;
 }
 
+.memo{
+    width: 1036x;
+    height: 266px;
+}
+
+.kami{
+    width: 1628x;
+    height: 418px;
+}
+
 .logo:hover {background-color: #ffffff; }
 
 .logout:hover {background-color: #ffffff; }
 
 .navbar-logo:hover {background-color: #ffffff; }
 
+.memo:hover {background-color: #ffffff; }
 
+.kami:hover {background-color: #ffffff; }
 
 @media(min-width:1024px) {
     .navbar-logo{
