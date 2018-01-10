@@ -14,35 +14,112 @@
  *= require_self
  */
 
-body { padding-top: 50px; }
+body { padding-top: 30px; }
 footer { margin-top: 50px; }
 table, td, th { vertical-align: middle; border: none; }
-th { border-bottom: 1px solid #AAAAAA; }
+th { border-bottom: 1px solid #000000; }
 
 body {
     font-family: 'HG丸ｺﾞｼｯｸM-PRO';
   }
 
-body { font-size: 200%; }
+body { font-size: 150%; }
 
 .logo{
-    width: 400px;
-    height: 70px;
+    width: 290px;
+    height: 53px;
 }
 
 .logout{
-    width: 100px;
-    height: 60px;
+    width: 75px;
+    height: 50px;
 }
 
     
 .top{
-    width: 160x;
-    height: 45px;
+    width: 148x;
+    height: 38px;
 }
 
 .logo:hover {background-color: #ffffff; }
 
 .logout:hover {background-color: #ffffff; }
 
+.navbar-logo:hover {background-color: #ffffff; }
 
+
+
+@media(min-width:1024px) {
+    .navbar-logo{
+        width: 550px;
+        height: 50px;
+    }
+    .logo{
+        width: 550px;
+        height: 50px;
+    }
+    .top{
+        width: 200px;
+        height: 50px;
+    }
+}
+
+@media(max-width:770px) {
+    .navbar-logo{
+        width: 400px;
+        height: 50px;
+    }
+    .logo{
+        width: 400px;
+        height: 50px;
+    }
+    .top{
+        width: 250px;
+        height: 45px;
+    }
+}
+
+@media(max-width:420px) {
+    .navbar-logo{
+        width: 250px;
+        height: 50px;
+    }
+    .logo{
+        width: 250px;
+        height: 50px;
+    }
+    .top{
+        width: 140px;
+        height: 45px;
+    }
+}
+
+@media(max-width:380px) {
+    .navbar-logo{
+        width: 200px;
+        height: 50px;
+    }
+    .logo{
+        width: 200px;
+        height: 50px;
+    }
+    .top{
+        width: 140px;
+        height: 45px;
+    }
+}
+
+@media(max-width:320px) {
+    .navbar-logo{
+        width: 170px;
+        height: 50px;
+    }
+    .logo{
+        width: 170px;
+        height: 50px;
+    }
+    .top{
+        width: 140px;
+        height: 45px;
+    }
+}

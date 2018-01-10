@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :check_logined
   private
+  
   def check_logined
     if session[:usr] then
       begin
@@ -22,7 +23,11 @@ class ApplicationController < ActionController::Base
       flash[:referer] = request.fullpath
       redirect_to controller: :login, action: :index
     end
+
+    
   end
+
+  
 
   private
   
