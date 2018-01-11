@@ -68,6 +68,7 @@ class UsersController < ApplicationController
 
     if @user.save
       redirect_to users_path
+    
     else
       render :edit
     end

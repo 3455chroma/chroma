@@ -71,8 +71,10 @@
   </nav>
 
     <% if @usr.present? %>
+      <%= image_tag show_image_user_path(@usr), :width => 45 %>    
       <%= @usr.name %>
-        <!-- <div align="right"> -->
+      <%= link_to image_tag('settei.png', class:'settei'),edit_user_path(@usr) %>
+      <!-- <div align="right"> -->
         <div align="right" style="position: absolute; right: 0; top: 75px;">
          <%= link_to image_tag('logout.png', class:'logout',style:"background-color:#{@erasercolor}"), login_logoff_path %><br>
         </div>

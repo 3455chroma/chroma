@@ -39,12 +39,27 @@ body { font-size: 150%; }
     width: 120px;
     height: 60px;
 }
-
     
 .top{
     width: 148x;
     height: 38px;
 }
+
+.shinki{
+    width: 190px;
+    height: 080x;
+}
+
+.itiran{
+    width: 160x;
+    height: 70px;
+}
+
+.settei{
+    width: 25px;
+    height: 25px;
+}
+
 
 .logo:hover {background-color: #ffffff; }
 
@@ -52,6 +67,7 @@ body { font-size: 150%; }
 
 .navbar-logo:hover {background-color: #ffffff; }
 
+.settei:hover {background-color: #ffffff}
 
 
 @media(min-width:1024px) {
