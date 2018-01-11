@@ -54,12 +54,16 @@ body { font-size: 150%; }
 .kami{
     width: 1628x;
     height: 418px;
-    right: 400px;
+    position: absolute;
+    right: 350px;
+    top: 500px;
 }
 
 .sima{
     width: 1628x;
     height: 418px;
+    position: absolute;
+    top: 800px;
 }
 
 .logo:hover {background-color: #ffffff; }
@@ -72,7 +76,7 @@ body { font-size: 150%; }
 
 .kami:hover {background-color: #ffffff; }
 
-.sima:hover {background-color: #ffffff; }
+.sima:hover {background: rgba(255, 255, 255, 0.0); }
 
 @media(min-width:1024px) {
     .navbar-logo{
