@@ -19,6 +19,7 @@ footer { margin-top: 50px; }
 table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #000000; }
 
+
 body {
     font-family: 'HG丸ｺﾞｼｯｸM-PRO';
   }
@@ -39,7 +40,6 @@ body { font-size: 150%; }
     width: 120px;
     height: 60px;
 }
-
     
 .top{
     width: 148x;
@@ -66,6 +66,22 @@ body { font-size: 150%; }
     top: 800px;
 }
 
+.shinki{
+    width: 190px;
+    height: 080x;
+}
+
+.itiran{
+    width: 160x;
+    height: 70px;
+}
+
+.settei{
+    width: 25px;
+    height: 25px;
+}
+
+
 .logo:hover {background-color: #ffffff; }
 
 .logout:hover {background-color: #ffffff; }
@@ -75,6 +91,8 @@ body { font-size: 150%; }
 .memo:hover {background-color: #ffffff; }
 
 .kami:hover {background-color: #ffffff; }
+
+.settei:hover {background-color: #ffffff}
 
 .sima:hover {background: rgba(255, 255, 255, 0.0); }
 
