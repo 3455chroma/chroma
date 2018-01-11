@@ -154,7 +154,7 @@
         <td><%= stouroku.tokuten %></td>
         <td><%= stouroku.user.name %></td>
       <!--  <td><%= link_to '詳細', stouroku_path(stouroku, :all=>true) %></td> -->
-      <!--  <td><%= link_to '変更', edit_stouroku_path(stouroku, :all=>true) %></td> -->
+        <td><%= link_to '変更', edit_stouroku_path(stouroku, :all=>true) %></td>
         <td><%= link_to '削除', stouroku_path(stouroku, :all=>true), method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
         
       <% end %>
@@ -168,12 +168,20 @@
 <br>
 
   <button type="button"  class="btn btn-primary" >
-  <%= link_to '完了全件ON', stourokus_path(:all=>true) ,:style => 'color:white' %>
-</button>
+<% if @genre_id == 0 %>
+  <%= link_to '完了全件ON', stourokus_path(:all=>true ) ,:style => 'color:white' %>
+<% else %>
+  <%= link_to '完了全件ON', stourokus_path(:all=>true,:genre_id => @genre_id ) ,:style => 'color:white' %>
+<% end %>
+  </button>
 
 <th>
-<button type="button"  class="btn btn-primary" >
-<%= link_to '完了全件OFF', stourokus_path ,:style => 'color:white' %>
+  <button type="button"  class="btn btn-primary" >
+<% if @genre_id == 0 %>
+  <%= link_to '完了全件OFF', stourokus_path ,:style => 'color:white' %>
+<% else %>
+  <%= link_to '完了全件OFF', stourokus_path(:genre_id => @genre_id) ,:style => 'color:white' %>
+<% end %>
 </button>
 </th>
 
