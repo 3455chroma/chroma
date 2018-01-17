@@ -40,12 +40,50 @@ body { font-size: 150%; }
     width: 120px;
     height: 60px;
 }
-
     
 .top{
     width: 148x;
     height: 38px;
+    position: relative
+    right: 400
+    top: 0px;
 }
+
+.memo{
+    width: 1036x;
+    height: 266px;
+}
+
+.kami{
+    width: 1628x;
+    height: 418px;
+    position: absolute;
+    right: 350px;
+    top: 510px;
+}
+
+.sima{
+    width: 1628x;
+    height: 418px;
+    position: absolute;
+    top: 800px;
+}
+
+.shinki{
+    width: 190px;
+    height: 080x;
+}
+
+.itiran{
+    width: 160x;
+    height: 70px;
+}
+
+.settei{
+    width: 25px;
+    height: 25px;
+}
+
 
 .logo:hover {background-color: #ffffff; }
 
@@ -53,7 +91,18 @@ body { font-size: 150%; }
 
 .navbar-{background-color: #ffffff; }
 
+<<<<<<< HEAD
+/* .settei:hover {background-color: rgba(255, 255, 255, 0); }   */
 
+=======
+.memo:hover {background-color: #ffffff; }
+
+.kami:hover {background-color: #ffffff; }
+
+.settei:hover {background-color: #ffffff}
+>>>>>>> cc5e594f3eeca339c99a89c9464f0f95d279616a
+
+.sima:hover {background: rgba(255, 255, 255, 0.0); }
 
 @media(min-width:1024px) {
     .navbar-logo{

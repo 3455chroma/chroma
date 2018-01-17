@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
@@ -24,7 +24,7 @@
       @erasercolor = @color = "#efffef"
       @pen = 'dvd.png' 
     when "本"
-      @erasercolor = @color = "#ffffef" 
+      @erasercolor = @color = "#ffffef"
       @pen = 'hon.png'
     end
     else
@@ -37,7 +37,7 @@
   else 
     @erasercolor = @color = "#ffffff" 
     @pen = 'toumei.png'
-  end
+  end 
   %>
 
   <body style="background-color: <%= @color %>;">
@@ -52,7 +52,7 @@
       </button>
 
       <p style= "position: relative; z-index:9999;">
-        <a class="navbar-brand" href="/"><font face="ふぁんしーはーと" font size=6><font color="red">C</font><font color="#9932cc">h</font><font color="blue">r</font><font color="green">o</font><font color="yellow">m</font><font color="orange">a</font></font></a>
+        <a class="navbar-brand" href="/"><font face="過充電FONTくれよん" font size=6><font color="red">C</font><font color="#9932cc">h</font><font color="blue">r</font><font color="green">o</font><font color="yellow">m</font><font color="orange">a</font></font></a>
       </p>
       
       <div style="position: absolute; right: 0; top: 0;">
@@ -73,8 +73,10 @@
   </nav>
 
     <% if @usr.present? %>
+      <%= image_tag show_image_user_path(@usr), :width => 45 %>    
       <%= @usr.name %>
-        <!-- <div align="right"> -->
+      <%= link_to image_tag('settei.png', class:'settei'),edit_user_path(@usr) %>
+      <!-- <div align="right"> -->
         <div align="right" style="position: absolute; right: 0; top: 75px;">
          <%= link_to image_tag('logout.png', class:'logout',style:"background-color:#{@erasercolor}"), login_logoff_path %><br>
         </div>
@@ -86,7 +88,8 @@
     <br>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <!-- <%= link_to 'ホーム(仮)に戻る', home_kari_path %> -->
-    <div align="left" style=" left: 0; top: 300px">    
+    <!-- <div align="right" style=" right: 400; top: 75px"> -->
+    <div align="right" style="position: absolute; right: 0; top: 145px;">
     <%= link_to image_tag('top.png', class:'top'), home_kari_path %><br>    
     </div>
     <footer>

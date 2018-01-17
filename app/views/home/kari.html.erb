@@ -1,21 +1,21 @@
 <%= image_tag('tsuchi.png', class:'tsuchi') %><br>
 
 
-<% @tsuchi1.each do |tsuchi| %>
+<% @tsuchi7.each do |tsuchi| %>
   <div>
     <td><%= tsuchi.name %>  の発売日まで あと３日です</td>
   </div>
 <% end %>
 
-<% @tsuchi2.each do |tsuchi| %>
+<% @tsuchi6.each do |tsuchi| %>
   <div>
     <td><%= tsuchi.name %>  の発売日まで あと２日です</td>
   </div>
 <% end %>
 
-<% @tsuchi3.each do |tsuchi| %>
+<% @tsuchi5.each do |tsuchi| %> 
   <div>
-    <td><%= tsuchi.name %>  の発売日は明日です</td>
+    <td><%= tsuchi.name %>  の発売日は明日です。店舗に予約した商品は取りに行くことができます。</td>
   </div>
 <% end %>
 
@@ -25,19 +25,19 @@
   </div>
 <% end %>
 
-<% @tsuchi5.each do |tsuchi| %>
+<% @tsuchi3.each do |tsuchi| %>
   <div>
     <td><%= tsuchi.name %>  の受け取りができます</td>
   </div>
 <% end %>
 
-<% @tsuchi6.each do |tsuchi| %>
+<% @tsuchi2.each do |tsuchi| %>
   <div>
     <td><%= tsuchi.name %>  の受け取りができます</td>
   </div>
 <% end %>
 
-<% @tsuchi7.each do |tsuchi| %>
+<% @tsuchi1.each do |tsuchi| %>
   <div>
     <td><%= tsuchi.name %>  の受け取りができます</td>
   </div>
@@ -60,5 +60,5 @@
   <%= link_to image_tag('hon.png', class:'logo'), stourokus_path(genre_id: book) %><br>
 <% end %>
 
-<%= link_to image_tag('memo.png', class:'logo'), mtourokus_path %><br>
+<%= link_to image_tag('memo.png', class:'logo'), "http://localhost:3000/memo/top" %><br>
 </div>

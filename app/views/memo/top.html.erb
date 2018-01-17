@@ -1,0 +1,42 @@
+<h1>メモ</h1>
+<br>
+
+<!-- <div align="right" style=" right: 0; top: 390px;"> -->
+<% @bundoki.each do |bundoki| %>
+  <%= link_to image_tag('bundoki.png', class:'memo'), mtourokus_path(genre_id: bundoki) %><br>
+<% end %>
+
+<div align="right"  style=" right: 600; top: 450px;">
+<% @seisan.each do |seisan| %>
+  <%= link_to image_tag('seisan2.png', class:'kami'), mtourokus_path(genre_id: seisan) %><br>
+  <% end %>
+</div>
+
+<div align="left"  style=" left: 0; top: 800px;">
+  <% @sankaku.each do |sankaku| %>
+  <%= link_to image_tag('sankaku3.png', class:'sima'), mtourokus_path(genre_id: sankaku) %><br>
+<% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,8 +10,8 @@ class Stouroku < ApplicationRecord
             errors[:base] << '商品名は必ず入力してください'
         end
 
-        if money.blank?
-            errors[:base] << '金額は必ず入力してください'
-        end
+        #if money.blank?
+            #errors[:base] << '金額は必ず入力してください'
+        #end
     end
 end
