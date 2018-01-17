@@ -2,6 +2,8 @@
 
 <h1>商品詳細</h1>
 
+<br>
+
   <% @yoyaku.each do |y| %>
 <%
   keyword = ''
@@ -53,13 +55,15 @@
 
 <p>
   <strong>特典</strong>
-  <%= @stouroku.tokuten %>
+  <%= @stouroku.tokuten  %>
 </p>
 
 <!-- <p>
   <strong>ユーザー</strong>
   <%= @stouroku.user.name %>
 </p> -->
+
+<br>
 
 <%= link_to '新規登録', new_stouroku_path %>
 <%= link_to '戻る',  'http://localhost:3000/stourokus'  %> 

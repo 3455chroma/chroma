@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
@@ -37,7 +37,7 @@
   else 
     @erasercolor = @color = "#ffffff" 
     @pen = 'toumei.png'
-  end
+  end 
   %>
 
   <body style="background-color: <%= @color %>;">
@@ -86,7 +86,8 @@
     <br>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <!-- <%= link_to 'ホーム(仮)に戻る', home_kari_path %> -->
-    <div align="left" style=" left: 0; top: 300px">    
+    <!-- <div align="right" style=" right: 400; top: 75px"> -->
+    <div align="right" style="position: absolute; right: 0; top: 145px;">
     <%= link_to image_tag('top.png', class:'top'), home_kari_path %><br>    
     </div>
     <footer>

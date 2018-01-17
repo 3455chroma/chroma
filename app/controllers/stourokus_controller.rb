@@ -1,6 +1,6 @@
 class StourokusController < ApplicationController
   before_action :set_stouroku, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_all
   # GET /stourokus
   # GET /stourokus.json
   def index
@@ -8,22 +8,25 @@ class StourokusController < ApplicationController
   #  @stourokus2 = Stouroku.where(cd:true)
 
     if params[:genre_id].present?
-      @stourokus1 = Stouroku.where(cd: false, dvd:false,genre_id: params[:genre_id],user_id: session[:usr])
+      @stourokus1 = Stouroku.where(cd: false). where(dvd:false,genre_id: params[:genre_id],user_id: session[:usr])
       @stourokus2 = Stouroku.where(cd: true, genre_id: params[:genre_id],user_id: session[:usr])
-      @stourokus3 = Stouroku.where(cd: false, dvd:true, genre_id: params[:genre_id],user_id: session[:usr])      
+      @stourokus3 = Stouroku.where(cd: false). where(dvd:true, genre_id: params[:genre_id],user_id: session[:usr])
+      @genre_id = params[:genre_id]
     else 
-      @stourokus1 = Stouroku.where(cd: false, dvd: false,user_id: session[:usr])
+      @stourokus1 = Stouroku.where(cd: false). where(dvd: false,user_id: session[:usr])
       @stourokus2 = Stouroku.where(cd: true, user_id: session[:usr])
-      @stourokus3 = Stouroku.where(dvd:true, user_id: session[:usr])
-
-    end 
+      @stourokus3 = Stouroku.where(cd: false). where(dvd:true, user_id: session[:usr])
+      @genre_id = 0
+    end
+    
   end
 
   # GET /stourokus/1
   # GET /stourokus/1.json
   def show
-    @yoyaku   = Yoyaku.all
-    @genre    = Genre.all
+    @yoyaku = Yoyaku.all
+    @genre = Genre.all
+
   end
 
   # GET /stourokus/new
@@ -118,7 +121,7 @@ end
   def destroy
     @stouroku.destroy
     respond_to do |format|
-      format.html { redirect_to stourokus_url, notice: 'Stouroku was successfully destroyed.' }
+      format.html { redirect_to stourokus_url(:all=>@all), notice: 'Stouroku was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -128,7 +131,13 @@ end
     def set_stouroku
       @stouroku = Stouroku.find(params[:id])
     end
-
+    def set_all
+      if params[:all].present?
+        @all = true
+      else
+        @all = false
+      end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def stouroku_params
       params.require(:stouroku).permit(:genre_id, :name, :hito, :hatsubaiday, :tenpo, :money, :tokuten, :user_id, :cd, :dvd)
