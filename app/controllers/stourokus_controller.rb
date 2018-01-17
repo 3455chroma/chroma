@@ -36,6 +36,11 @@ class StourokusController < ApplicationController
 
   # GET /stourokus/1/edit
   def edit
+    if params[:genre_id].present?
+      @genre_id = params[:genre_id]
+    else 
+      @genre_id = 0
+    end  
   end
 
   # POST /stourokus
@@ -106,11 +111,11 @@ class StourokusController < ApplicationController
   @stouroku.user_id       = session[:usr]   
   @stouroku.cd       = params[:stouroku][:cd]
   @stouroku.dvd       = params[:stouroku][:dvd]
-  
+  @genre_id       = params[:search_genre_id]
   
 
   if @stouroku.save
-    redirect_to stourokus_path
+    redirect_to stourokus_path(:genre_id => @genre_id)
   else
     render :edit
   end
@@ -121,7 +126,7 @@ end
   def destroy
     @stouroku.destroy
     respond_to do |format|
-      format.html { redirect_to stourokus_url(:all=>@all), notice: 'Stouroku was successfully destroyed.' }
+      format.html { redirect_to stourokus_url(:all=>@all), notice: '消去完了' }
       format.json { head :no_content }
     end
   end

@@ -48,6 +48,9 @@
 <div align="right" style="position: absolute; right: 0; top: 323px;">
 <%= link_to image_tag('newtouroku.png', class:'logo'), new_stouroku_path %><br>
 
+<div align="right" style="position: absolute; right: 0; top: 50px;">
+<%= link_to image_tag('yoyaku.png', class:'logo'), stourokus_path %><br>
+
 <% @cd.each do |cd| %>
   <%= link_to image_tag('cd.png', class:'logo'), stourokus_path(genre_id: cd) %><br>
 <% end %>

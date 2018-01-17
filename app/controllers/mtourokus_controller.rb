@@ -60,7 +60,7 @@ class MtourokusController < ApplicationController
   def destroy
     @mtouroku.destroy
     respond_to do |format|
-      format.html { redirect_to mtourokus_url, notice: 'Mtouroku was successfully destroyed.' }
+      format.html { redirect_to mtourokus_url, notice: '消去完了' }
       format.json { head :no_content }
     end
   end
