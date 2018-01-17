@@ -92,16 +92,13 @@ body { font-size: 150%; }
 
 .navbar-{background-color: #ffffff; }
 
-<<<<<<< HEAD
 /* .settei:hover {background-color: rgba(255, 255, 255, 0); }   */
 
-=======
 .memo:hover {background-color: #ffffff; }
 
 .kami:hover {background-color: #ffffff; }
 
-.settei:hover {background-color: #ffffff}
->>>>>>> cc5e594f3eeca339c99a89c9464f0f95d279616a
+/*.settei:hover {background-color: #ffffff}*/
 
 .sima:hover {background: rgba(255, 255, 255, 0.0); }
 
