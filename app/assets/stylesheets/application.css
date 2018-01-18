@@ -74,6 +74,8 @@ body { font-size: 150%; }
     height: 080x;
 }
 
+
+
 .itiran{
     width: 160x;
     height: 70px;
@@ -94,7 +96,7 @@ body { font-size: 150%; }
 
 .logout:hover {background-color: #ffffff; }
 
-.navbar-logo:hover {background-color: #ffffff; }
+.navbar-{background-color: #ffffff; }
 
 /* .settei:hover {background-color: rgba(255, 255, 255, 0); }   */
 
