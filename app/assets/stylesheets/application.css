@@ -84,6 +84,11 @@ body { font-size: 150%; }
     height: 25px;
 }
 
+.memomo{
+    width: 190px;
+    height: 80px;
+}
+
 
 .logo:hover {background-color: #ffffff; }
 

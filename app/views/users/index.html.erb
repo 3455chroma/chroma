@@ -20,7 +20,7 @@
         <td><%= user.name %></td>        
         <td><%= user.account %></td>
         <td><%= link_to '詳細', user %></td>
-        <td><%= link_to '変更', edit_user_path(user) %></td>
+        <td><%= link_to '変更', edit_user_path(user), data: {"turbolinks" => false} %></td>
         <td><%= link_to '削除', user, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>

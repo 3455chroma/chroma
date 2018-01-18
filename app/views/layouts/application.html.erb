@@ -10,37 +10,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
     <script>
-    // documentと毎回書くのがだるいので$に置き換え
     var $ = document; 
-    var $form = $.querySelector('form');// jQueryの $("form")相当
+    var $form = $.querySelector('form');
     
-    //jQueryの$(function() { 相当(ただし厳密には違う)
+
     $.addEventListener('DOMContentLoaded', function() {
-        //画像ファイルプレビュー表示
-        //  jQueryの $('input[type="file"]')相当
-        // addEventListenerは on("change", function(e){}) 相当
         $.querySelector('input[type="file"]').addEventListener('change', function(e) {
             var file = e.target.files[0],
                    reader = new FileReader(),
-                   $preview =  $.querySelector(".preview"), // jQueryの $(".preview")相当
+                   $preview =  $.querySelector(".preview"), 
                    t = this;
     
-            // 画像ファイル以外の場合は何もしない
+            
             if(file.type.indexOf("image") < 0){
               return false;
             }
     
             reader.onload = (function(file) {
               return function(e) {
-                 //jQueryの$preview.empty(); 相当
+                 
                  while ($preview.firstChild) $preview.removeChild($preview.firstChild);
     
-                // imgタグを作成
+                
                 var img = document.createElement( 'img' );
                 img.setAttribute('src',  e.target.result);
                 img.setAttribute('width', '150px');
                 img.setAttribute('title',  file.name);
-                // imgタグを$previeの中に追加
+                
                 $preview.appendChild(img);
               }; 
             })(file);
@@ -94,7 +90,7 @@
       <span class="icon-bar"></span>
       </button>
       <p style= "position: relative; z-index:9999;">
-        <a class="navbar-brand" href="/"><font face="過充電FONTくれよん" font size=6><font color="red">C</font><font color="#9932cc">h</font><font color="blue">r</font><font color="green">o</font><font color="yellow">m</font><font color="orange">a</font></font></a>
+        <a class="navbar-brand" href="/"><font face="Goudy Stout" font size=6><font color="red">C</font><font color="#9932cc">h</font><font color="blue">r</font><font color="green">o</font><font color="yellow">m</font><font color="orange">a</font></font></a>
       </p>
       <div style="position: absolute; right: 0; top: 0;">
         <%= image_tag(@pen,class:'navbar-logo') %> 
@@ -116,7 +112,7 @@
     <% if @usr.present? %>
       <%= image_tag show_image_user_path(@usr), :width => 45 %>    
       <%= @usr.name %>
-      <%= link_to image_tag('settei.png', class:'settei'),edit_user_path(@usr) %>
+      <%= link_to image_tag('settei.png', class:'settei'),edit_user_path(@usr), data: {"turbolinks" => false} %>
       <!-- <div align="right"> -->
         <div align="right" style="position: absolute; right: 0; top: 75px;">
          <%= link_to image_tag('logout.png', class:'logout',style:"background-color:#{@erasercolor}"), login_logoff_path %><br>
