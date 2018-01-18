@@ -1,7 +1,11 @@
 <p style = "color: red;"><%= @error %></p>
 
   <%= form_tag action: :auth do %>  
-  
+    
+
+    <div align="left" style="position: absolute; left: 20; top: 50px;">
+    <%= image_tag 'kodomo.png' %><br>
+
     <div class = "field">
       <%= label_tag :account, 'アカウント' %>
       <%= text_field_tag :account, '', autocomplete: 'off'  %>
