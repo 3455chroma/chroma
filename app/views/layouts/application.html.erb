@@ -15,7 +15,7 @@
   case controller.controller_name 
   
   when "stourokus"
-    if params[:genre_id].present?
+    if params[:genre_id].present? && params[:genre_id].to_i != 0
     case Genre.find(params[:genre_id]).name
     when "CD"
       @erasercolor = @color = "#efffff"
@@ -75,7 +75,7 @@
       <%= @usr.name %>
       <%= link_to image_tag('settei.png', class:'settei'),edit_user_path(@usr) %>
       <!-- <div align="right"> -->
-        <div align="right" style="position: absolute; right: 0; top: 75px;">
+        <div align="right" style="position: absolute; right: 0; top: 58px;">
          <%= link_to image_tag('logout.png', class:'logout',style:"background-color:#{@erasercolor}"), login_logoff_path %><br>
         </div>
      <% end %> 
@@ -87,7 +87,7 @@
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <!-- <%= link_to 'ホーム(仮)に戻る', home_kari_path %> -->
     <!-- <div align="right" style=" right: 400; top: 75px"> -->
-    <div align="right" style="position: absolute; right: 0; top: 145px;">
+    <div align="right" style="position: absolute; right: 0; top: 115px;">
     <%= link_to image_tag('top.png', class:'top'), home_kari_path %><br>    
     </div>
     <footer>

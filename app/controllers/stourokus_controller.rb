@@ -7,7 +7,7 @@ class StourokusController < ApplicationController
   #  @stourokus1 = Stouroku.where(cd:false)
   #  @stourokus2 = Stouroku.where(cd:true)
 
-    if params[:genre_id].present?
+    if params[:genre_id].present? && params[:genre_id].to_i != 0
       @stourokus1 = Stouroku.where(cd: false). where(dvd:false,genre_id: params[:genre_id],user_id: session[:usr])
       @stourokus2 = Stouroku.where(cd: true, genre_id: params[:genre_id],user_id: session[:usr])
       @stourokus3 = Stouroku.where(cd: false). where(dvd:true, genre_id: params[:genre_id],user_id: session[:usr])
@@ -74,7 +74,6 @@ class StourokusController < ApplicationController
     @stouroku.cd       = params[:stouroku][:cd]
     @stouroku.dvd       = params[:stouroku][:dvd]
     
-    
 
     if @stouroku.save
       redirect_to @stouroku
@@ -115,7 +114,13 @@ class StourokusController < ApplicationController
   
 
   if @stouroku.save
+    
+    if @genre_id != 0
     redirect_to stourokus_path(:genre_id => @genre_id)
+    else
+    redirect_to stourokus_path
+    end
+    
   else
     render :edit
   end
