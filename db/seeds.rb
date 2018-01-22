@@ -10,6 +10,7 @@ Genre.create(name: '本', keyword_amazon: 'stripbooks', keyword_rakuten: '200162
 Genre.create(name: 'CD', keyword_amazon: 'popular', keyword_rakuten: '101311')
 Genre.create(name: 'DVD', keyword_amazon: 'dvd', keyword_rakuten: '101354')
 
+
 Genrekeyword.create(genre_id:'本', yoyaku_id:'amazon', keyword:'stripbooks')
 Genrekeyword.create(genre_id:'CD', yoyaku_id:'amazon', keyword:'popular')
 Genrekeyword.create(genre_id:'DVD', yoyaku_id:'amazon', keyword:'dvd')
