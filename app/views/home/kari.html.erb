@@ -1,47 +1,52 @@
 <%= image_tag('tsuchi.png', class:'tsuchi') %><br>
 
+<% namecolor = "blue" %>
+
 
 <% @tsuchi7.each do |tsuchi| %>
   <div>
-    <td><%= tsuchi.name %>  の発売日まで あと３日です</td>
+    <p ><%= tsuchi.name %>  の発売日まで あと３日です  <%= link_to ' 詳細', stouroku_path(tsuchi) %></p>
+    <%= link_to '詳細', stouroku %>    
   </div>
 <% end %>
 
 <% @tsuchi6.each do |tsuchi| %>
   <div>
-    <td><%= tsuchi.name %>  の発売日まで あと２日です</td>
+  <p ><%= tsuchi.name %>  の発売日まで あと２日です  <%= link_to ' 詳細', stouroku_path(tsuchi) %></p>
   </div>
 <% end %>
 
 <% @tsuchi5.each do |tsuchi| %> 
   <div>
-    <td><%= tsuchi.name %>  の発売日は明日です。店舗に予約した商品は取りに行くことができます。</td>
+    <p ><%= tsuchi.name %>  の発売日は明日です。店舗に予約した商品は取りに行くことができます。  <%= link_to ' 詳細', stouroku_path(tsuchi) %></p>
   </div>
 <% end %>
 
 <% @tsuchi4.each do |tsuchi| %>
-  <div>
-    <td><%= tsuchi.name %>  の発売日です</td>
-  </div>
+    <div>
+      <p class="bg-warning"><%= tsuchi.name %>  の発売日です 
+      <%= link_to ' 詳細', stouroku_path(tsuchi) %></p>     
+      </div>
 <% end %>
 
 <% @tsuchi3.each do |tsuchi| %>
   <div>
-    <td><%= tsuchi.name %>  の受け取りができます</td>
+  <p ><%= tsuchi.name %>  の受け取りができます  <%= link_to '詳細', stouroku_path(tsuchi) %></p>
   </div>
 <% end %>
 
 <% @tsuchi2.each do |tsuchi| %>
   <div>
-    <td><%= tsuchi.name %>  の受け取りができます</td>
+    <p ><%= tsuchi.name %>  の受け取りができます  <%= link_to ' 詳細', stouroku_path(tsuchi) %></p>
   </div>
 <% end %>
 
 <% @tsuchi1.each do |tsuchi| %>
   <div>
-    <td><%= tsuchi.name %>  の受け取りができます</td>
+    <p class="bg-danger"><%= tsuchi.name %>  の受け取りができます  <%= link_to ' 詳細', stouroku_path(tsuchi) %></p>
   </div>
 <% end %>
+
 
 <hr>
 
