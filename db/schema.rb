@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115005145) do
+ActiveRecord::Schema.define(version: 20180125020050) do
 
   create_table "genrekeywords", force: :cascade do |t|
     t.integer "genre_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20171115005145) do
     t.integer "genre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "stourokus", force: :cascade do |t|

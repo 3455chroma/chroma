@@ -1,6 +1,6 @@
 <%= image_tag('tsuchi.png', class:'tsuchi') %><br>
 
-<% namecolor = "blue" %>
+<% namecolor = "red" %>
 
 
 <% @tsuchi7.each do |tsuchi| %>
@@ -24,8 +24,7 @@
 
 <% @tsuchi4.each do |tsuchi| %>
     <div>
-      <p class="bg-warning"><%= tsuchi.name %>  の発売日です 
-      <%= link_to ' 詳細', stouroku_path(tsuchi) %></p>     
+      <p class="bg-warning"><%= tsuchi.name %>  の発売日です <%= link_to ' 詳細', stouroku_path(tsuchi) %></td></p>     
       </div>
 <% end %>
 

@@ -42,8 +42,8 @@ body { font-size: 150%; }
 }
     
 .top{
-    width: 110x;
-    height: 26px;
+    width: 100x;
+    height: 23px;
     position: relative
     right: 400
     top: 0px;
@@ -119,8 +119,8 @@ body { font-size: 150%; }
         height: 50px;
     }
     .top{
-        width: 200px;
-        height: 50px;
+        width: 170px;
+        height: 35px;
     }
 }
 
@@ -134,8 +134,8 @@ body { font-size: 150%; }
         height: 50px;
     }
     .top{
-        width: 250px;
-        height: 45px;
+        width: 200px;
+        height: 36px;
     }
 }
 
@@ -149,8 +149,8 @@ body { font-size: 150%; }
         height: 50px;
     }
     .top{
-        width: 140px;
-        height: 45px;
+        width: 120px;
+        height: 35px;
     }
 }
 
@@ -164,8 +164,8 @@ body { font-size: 150%; }
         height: 50px;
     }
     .top{
-        width: 140px;
-        height: 45px;
+        width: 120px;
+        height: 35px;
     }
 }
 
@@ -179,7 +179,7 @@ body { font-size: 150%; }
         height: 50px;
     }
     .top{
-        width: 140px;
-        height: 45px;
+        width: 120px;
+        height: 35px;
     }
 }

@@ -5,7 +5,7 @@ class MtourokusController < ApplicationController
   # GET /mtourokus.json
   def index
     if params[:genre_id].present?
-      @mtourokus = Mtouroku.where(genre_id:params[:genre_id])
+      @mtourokus = Mtouroku.where(genre_id:params[:genre_id],user_id: session[:usr])
     else  
       @mtourokus = Mtouroku.all
     end  
@@ -23,35 +23,57 @@ class MtourokusController < ApplicationController
 
   # GET /mtourokus/1/edit
   def edit
-  end
+  end 
 
   # POST /mtourokus
   # POST /mtourokus.json
   def create
-    @mtouroku = Mtouroku.new(mtouroku_params)
+    #@mtouroku = Mtouroku.new(mtouroku_params)
 
-    respond_to do |format|
-      if @mtouroku.save
-        format.html { redirect_to @mtouroku, notice: 'Mtouroku was successfully created.' }
-        format.json { render :show, status: :created, location: @mtouroku }
-      else
-        format.html { render :new }
-        format.json { render json: @mtouroku.errors, status: :unprocessable_entity }
-      end
-    end
+    #respond_to do |format|
+      #if @mtouroku.save
+        #format.html { redirect_to @mtouroku, notice: 'Mtouroku was successfully created.' }
+        #format.json { render :show, status: :created, location: @mtouroku }
+      #else
+        #format.html { render :new }
+        #format.json { render json: @mtouroku.errors, status: :unprocessable_entity }
+      #end
+    #end
+  #end
+
+  @mtouroku               = Mtouroku.new
+  @mtouroku.genre_id      = params[:mtouroku][:genre_id]    
+  @mtouroku.user_id       = session[:usr]      
+  @mtouroku.memo          = params[:mtouroku][:memo]
+
+  if @mtouroku.save
+    redirect_to @mtouroku
+  else
+    render :new
   end
+end
+
 
   # PATCH/PUT /mtourokus/1
   # PATCH/PUT /mtourokus/1.json
   def update
-    respond_to do |format|
-      if @mtouroku.update(mtouroku_params)
-        format.html { redirect_to @mtouroku, notice: 'Mtouroku was successfully updated.' }
-        format.json { render :show, status: :ok, location: @mtouroku }
-      else
-        format.html { render :edit }
-        format.json { render json: @mtouroku.errors, status: :unprocessable_entity }
-      end
+    #respond_to do |format|
+      #if @mtouroku.update(mtouroku_params)
+        #format.html { redirect_to @mtouroku, notice: 'Mtouroku was successfully updated.' }
+        #format.json { render :show, status: :ok, location: @mtouroku }
+      #else
+        #format.html { render :edit }
+        #format.json { render json: @mtouroku.errors, status: :unprocessable_entity }
+      #end
+    #end
+    @mtouroku.genre_id      = params[:mtouroku][:genre_id]    
+    @mtouroku.user_id       = session[:usr]      
+    @mtouroku.memo          = params[:mtouroku][:memo]
+
+    if @mtouroku.save
+      redirect_to @mtouroku
+    else
+      render :new
     end
   end
 

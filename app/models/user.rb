@@ -1,6 +1,8 @@
 class User < ApplicationRecord
 
-    has_many :stourokus    
+    has_many :stourokus
+    has_many :mtourokus
+    
 
     validate :error_check_password, :on => :create
     validate :error_check

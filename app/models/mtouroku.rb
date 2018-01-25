@@ -1,6 +1,7 @@
 class Mtouroku < ApplicationRecord
 
 belongs_to :genre    
+belongs_to :user    
 
 validate :error_check
 
