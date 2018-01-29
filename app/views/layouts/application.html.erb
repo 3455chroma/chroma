@@ -102,9 +102,9 @@
       <ul class="nav navbar-nav">
           <li><%= link_to '商品登録', new_stouroku_path %></li> 
           <li><%= link_to '商品一覧', stourokus_path %></li>
-          <li><%= link_to 'CD', stourokus_path %></li> 
-          <li><%= link_to 'DVD', users_path %></li> 
-          <li><%= link_to '本', yoyakus_path %></li> 
+          <li><%= link_to 'CD', 'http://localhost:3000/stourokus?genre_id=2' %></li> 
+          <li><%= link_to 'DVD', 'http://localhost:3000/stourokus?genre_id=3' %></li> 
+          <li><%= link_to '本', 'http://localhost:3000/stourokus?genre_id=1' %></li> 
           <li><%= link_to 'メモ', mtourokus_path %></li> 
       </ul>
     </div> 

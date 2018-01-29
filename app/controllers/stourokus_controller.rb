@@ -17,7 +17,7 @@ class StourokusController < ApplicationController
       @stourokus2 = Stouroku.where(cd: true, user_id: session[:usr])
       @stourokus3 = Stouroku.where(cd: false). where(dvd:true, user_id: session[:usr])
       @genre_id = 0
-    end
+    end 
     
   end
 

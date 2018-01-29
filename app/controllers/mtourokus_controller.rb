@@ -7,7 +7,7 @@ class MtourokusController < ApplicationController
     if params[:genre_id].present?
       @mtourokus = Mtouroku.where(genre_id:params[:genre_id],user_id: session[:usr])
     else  
-      @mtourokus = Mtouroku.all
+      @mtourokus = Mtouroku.where(user_id: session[:usr])
     end  
   end
  

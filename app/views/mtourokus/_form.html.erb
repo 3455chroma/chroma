@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field"> 
     <%= form.label :ジャンル %>
     <%= form.select :genre_id, Genre.all.map{|b|[b.name,b.id]} %>
   </div>
